@@ -1,0 +1,771 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,      
+	urlcolor=blue,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+% title
+\title{Foglio di esercizi\\Complementi di matematica per le scienze chimiche\\ Anno accademico 2025/26}
+\author{Massimiliano Ghiotto}
+\date{}
+% comandi per quesito e soluzione
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{sol}{Soluzione all'esercizio}
+\newtheorem{exe}{Esercizio}
+
+% insiemi numerici
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+% cartella figure
+\graphicspath{{figures/}}
+\begin{document}
+\maketitle
+\noindent
+Per qualsiasi domanda potete contattarmi per mail all'indirizzo:
+\\
+\textit{massimiliano.ghiotto01@universitadipavia.it}
+
+\section{Statistica descrittiva}
+
+\begin{exe}
+	La tabella seguente rappresenta, al variare dell'anno, il numero di milioni di barili di olio che gli Stati Uniti hanno importato dalla Norvegia
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			anno              & 1999 & 2000 & 2001 & 2002 & 2003 & 2004 & 2005 & 2006 & 2007 & 2008 & 2009 \\
+			\hline
+			milioni di barili & 96   & 110  & 103  & 127  & 60   & 54   & 43   & 36   & 20   & 11   & 22
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	Calcolarne:
+	\begin{enumerate}
+		\item  la media e la mediana;
+		\item la varianza e la deviazione standard;
+		\item calcolare i quartili e la distanza interquartile.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item L'anno non ha alcun significato, basta applicare la formula per calcolare la media dei milioni di barili di olio importati:
+		      \[ \overline{x}_n = \frac1n \sum_{i=1}^{n}x_i \]
+		      dove in questo caso $ n=11 $ e si ottiene
+		      \[ \overline{x}_n = \frac{96+110+103+127+60+54+43+36+20+11+22}{11} = 62 \]
+		      Siccome $ n $ è dispari per calcolare la mediana basta ordinare i dati in ordine crescente e prendere il valore centrale. I dati ordinati sono:
+		      \[ 11,\ 20,\ 22,\  36,\ 43,\ 54,\ 60,\ 96,\ 103,\ 110,\ 127 \]
+		      dunque il valore della mediana è $ 54 $.
+		\item Ricordiamo che la formula della varianza è la seguente:
+		      \[ \sigma^2 = Var(\{x_1, \dots, x_n\}) = \frac1n \sum_{i=1}^{n}(x_i-\overline{x}_n)^2, \]
+		      sostituendo i dati nella formula si ottiene:
+		      \[ \sigma^2 = \frac{(96-62)^2+(110-62)^2+(103-62)^2+\dots+(11-62)^2+(22-62)^2}{11} =1494,2 . \]
+		      Dunque la deviazione standard vale:
+		      \[ \sigma = \sqrt{Var(\{x_1, \dots, x_n\})} = \sqrt{1494,2} = 38,65 .\]
+		\item Il primo quartile risulta essere $ 22 $, il secondo è pari alla mediana e vale $ 54 $, il terzo quartile è $ 103 $. Da cui si ottiene l'intervallo interquantile (o distanza interquartile) che vale $ IIQ = 103-22 = 81. $
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	A $ 1000 $ (mille) studenti iscritti all'Università di Pavia viene proposto un sondaggio dove in particolare si chiede di esprimere un giudizio su un servizio offerto agli studenti, usando una scala da
+	$ 1 $ a $ 6 $ ($ 1 $ = pessimo, $ 6 $ = eccellente). Le risposte ottenute sono riassunte qui sotto, dove per ognuno dei
+	giudizi fra parentesi vi è il numero di voti ottenuti.
+	\[
+		1\ (187)\quad 2\ (82)\quad 3\ (260)\quad 4\ (98)\quad 5\ (159)\quad 6\ (214) \]
+	\begin{enumerate}
+		\item  Calcolare media, moda, mediana dei risultati;
+		\item  determinare anche varianza e deviazione standard;
+		\item  fare un istogramma per visualizzare meglio i dati.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	L'esercizio è analogo al precedente ma ci sono le frequenze (valori indicati tra parentesi).
+	\begin{enumerate}
+		\item Cominciamo con il calcolo della media:
+		      \[ \overline{x}_n = \frac{1}{N_{tot}} \sum_{i=1}^{n}x_i \cdot f_i \]
+		      sostituendo i valori dei dati e si ottiene
+		      \[ \overline{x}_n = \frac{1\cdot 187 + 2\cdot 82 + 3 \cdot 260 + 4\cdot 98 + 5\cdot 159+ 6\cdot 214}{1000} = \frac{3602}{1000} = 3,602. \]
+		\item Mentre la varianza vale:
+		      \[ \sigma^2 = Var(\{x_1, \dots, x_n\}) = \frac{1}{N_{tot}} \sum_{i=1}^{n}f_i\cdot(x_i-\overline{x}_n)^2, \]
+		      e sostituendo i valori dei dati:
+		      \[ \begin{split}
+				      \sigma^2 & = \frac{(1-3.602)^2\cdot 187 + (2-3.602)^2\cdot 82 + (3-3.602)^2\cdot 260 +\cdots + (6-3.602)^2\cdot 214}{1000} \\
+				               & = 3.127596 \approx 3.13
+			      \end{split}\]
+		      da cui la deviazione standard è pari a:
+		      \[ \sigma = \sqrt{Var(\{x_1, \dots, x_n\})} = \sqrt{3.13} \approx 1,77 . \]
+	\end{enumerate}
+\end{sol}
+
+\section{Calcolo combinatorio}
+
+\begin{exe}
+	Cinque amici Ada, Beatrice, Carlo, Dario ed Emanuele si sfidano in una corsa di $ 1000 \ m$.
+	\begin{enumerate}
+		\item In quanti modi possono classificarsi i $ 5 $ amici?
+		\item Quanti modi ci sarebbero sapendo che Ada è arrivata seconda?
+		\item Quanti modi ci sarebbero se si sapesse soltanto che Ada è arrivata prima o seconda?
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Corrisponde alle permutazioni semplici di un insieme di $ 5 $ elementi, dunque ci sono $ 5! = 120 $ modi.
+		\item In questo caso si deve fissare Ada al secondo posto quindi sono permutazioni semplici di un insieme di quattro elementi, ovvero ci sono $ 4! = 24 $ modi.
+		\item In questo caso Ada può essere o al primo o al secondo posto, dunque ci sono $ 24 $ modi se Ada arriva seconda (punto precedente) ed altrettanti modi se Ada arrivasse prima. Quindi in totale ci sono $ 48 $ modi.
+	\end{enumerate}
+\end{sol}
+\begin{exe}
+	Nel gioco del lotto sono presenti i numeri da $ 1 $ a $ 90 $ (cioè sono presenti $ 90 $ numeri in totale), quartina e cinquina sono rispettivamente sequenze di  $ 4 $ e $ 5 $ numeri distinti.
+	\begin{enumerate}
+		\item Calcolare quante cinquine sono possibili.
+		\item Calcolare la probabilità di fare cinquina (giocando cinque numeri).
+		\item Calcolare la probabilità di fare quartina (giocando cinque numeri).
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Nel gioco del lotto vengono estratti $ 5 $ numeri tra i $ 90 $ disponibili ed il giocatore deve giocare $ 5 $ numeri, si dice che ha fatto cinquina se riesce ad indovinare tutti e cinque i numeri. Il numero di cinquine disponibili (l'ordine di estrazione non conta) è pari a:
+		      \[ \binom{90}{5} = \frac{90!}{5!\cdot (90-5)!} = \frac{90\cdot 89\cdot 88\cdot 87\cdot 86}{5\cdot 4\cdot 3\cdot 2\cdot 1} = 43949268 \ \text{cinquine.} \]
+		\item Siccome il giocatore gioca una tra le cinquine disponibili la probabilità di fare cinquina è pari a $ 1/43949268 \approx 2.276 \cdot 10^{-7} $.
+		\item Viene detto che si fa quaterna quando un giocatore indovina $ 4 $ dei $ 5 $ numeri che ha giocato. Il numero totale di cinquine che possono essere estratte è pari a $ 43949268 $, che corrispondo ai casi possibili. Ho un caso favorevole quando tra i cinque numeri che scelgo $ 4 $ sono corretti e questi sono $ 5\cdot 85 $ ($ 5 $ che sono le possibili quaterne presenti nella cinquina estratta e $ 85 $ che sono le possibilità di sbagliare un numero, poiché si deve fare quartina e non cinquina). La probabilità di fare quartina è dunque pari a:
+		      \[ \frac{5 \cdot 85}{43949268} = \frac{425}{43949268} \approx 9.672 \cdot 10^{-6}.  \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Il professor Layton si dimentica il codice di tre cifre del suo lucchetto per la bicicletta, decide allora di provare tutte le possibilità finché non trova quella corretta.
+	\begin{enumerate}
+		\item Calcolare la probabilità che indovini la combinazione del lucchetto al primo tentativo.
+		\item Calcolare la probabilità che indovini la combinazione del lucchetto al primo o al secondo tentativo.
+		\item Calcolare quante possibilità sapendo che nella combinazione che apre il lucchetto è presente almeno una cifra $ 3 $.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Dobbiamo calcolare il numero di combinazioni possibili, siccome il lucchetto e a $ 3 $ cifre e ogni cifra può assumere $ 10 $ valori (da $ 0 $ a $ 10 $) allora sono possibili in totale $ 10\cdot 10 \cdot 10 = 1000 $ combinazioni. La probabilità che indovina la combinazione al primo tentativo è dunque $ 1/1000 = 0,001 $.
+		\item In questo caso o indovina la combinazione del lucchetto al primo tentativo oppure la sbaglia al primo tentativo e la indovina al secondo, dunque la probabilità è:
+		      \[ \frac{1}{1000} + \frac{999}{1000}\cdot \frac{1}{999} = \frac{2}{1000} = 0,002. \]
+		\item In questo caso deve essere presente almeno una cifra $ 3 $, immaginiamo dunque di prendere la cifra $ 3 $, essa la possiamo posizionare nella combinazione di tre cifre in tre modi possibili, per scegliere le due cifre rimanenti abbiamo $ 10\cdot 10 = 100 $ possibilità; dunque in totale ci sono  $ 3\cdot 100 = 300  $ combinazioni possibili.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	La signora Erina Joestar vuole ridipingere le $ 5 $ pareti ($ 4 $ pareti laterali e il soffitto) della sua camera ed ha a disposizione $ 6 $ colori: giallo, verde, bianco, azzurro, rosa, arancione. Sapendo che ogni parete potrebbe essere colorata con un colore distinto calcolare:
+	\begin{enumerate}
+		\item quanti sono i possibili modi di colorare la stanza?
+		\item quanti sono i possibili modi per colorare la stanza sapendo che il soffitto ha deciso di farlo bianco?
+		\item quanti sono i possibili modi per colorare la stanza sapendo che Erina ha deciso che almeno una parete sarà bianca.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Siccome ci sono $ 5 $ pareti e per ogni parete Erina ha a disposizione $ 6 $ colori differenti, in totale sono possibili $ 6\cdot 6\cdot6 \cdot 6\cdot6 = 6^5 =7776$ colorazioni della stanza.
+		\item Come il punto fissato, trascurato il soffitto che ha colore fissato, quindi le colorazioni sono:  $ 6\cdot 6\cdot6 \cdot 6 = 6^4 = 1296. $
+		\item In questo caso almeno una parete deve essere colorata di bianco, quindi ho $ 5 $ modi per scegliere tale parete e poi $ 1296 $ modi per colorare le rimanenti $ 4 $ come desidero (punto precedente). Dunque in totale ci sono $ 5 \cdot 1296 = 6480 $ colorazioni possibili.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Quante diagonali ha un poligono di $ n $ lati?
+\end{exe}
+
+\begin{sol}
+	Se immagino di disegnare un poligono di $ n $ lati (e quindi di $ n $ vertici), le diagonali si ottengono collegando due vertici non contigui del poligono e questo lo posso fare in $ n\cdot(n-3) $ modi; poiché ho $ n $ modi di scegliere il primo vertice e $ n-3 $ modi per scegliere il secondo vertice, il $`` -3" $ è dovuto al fatto che i vertici vicini e il vertice stesso non li posso selezionare. Per ottenere il numero di diagonali finali devo dividere per due poiché per ora ogni diagonale la sto contando due volte (dal vertice A al vertice B e dal vertice B al vertice A), dunque la risposta all'esercizio è $ \frac{n(n-3)}{2}. $
+\end{sol}
+
+\begin{exe}
+	Un gruppo di $ 8 $ ragazzi vanno a vedere al cinema il nuovo film di Super Mario Bros, ai ragazzi viene assegnata un'intera fila del cinema da $ 15 $ posti. In quanti modi si possono disporre a sedere i ragazzi lungo la fila del cinema?
+\end{exe}
+
+\begin{sol}
+	Siccome tutti i ragazzi sono differenti ed anche i posti a sedere, il problema corrisponde a delle disposizioni semplici, ovvero $ 15\cdot14\cdot13\cdot12\cdot11\cdot10\cdot9\cdot8 = 259459200.$ Intuitivamente posso pensare di prendere il primo ragazzo e lo posso far sedere in $ 15 $ modi, poi prendo il secondo ragazzo e lo posso far sedere in $ 14 $ modi e così via fino all'ultimo ragazzo che lo posso far sedere in $ 8 $ modi.
+\end{sol}
+
+\begin{exe}
+	In una scacchiera $ 7 \times 7 $ si trova una pedina nel vertice in basso a sinistra. Le mosse consentita dalla pedina sono:
+	\begin{itemize}
+		\item spostarsi di una casella verso destra;
+		\item  spostarsi di una casella verso l'alto.
+	\end{itemize}
+	Quanti percorsi possibili può percorrere la pedina per raggiungere il vertice in alto a destra della scacchiera?
+\end{exe}
+
+\begin{sol}
+	La risposta al problema è:
+	\[ \binom{12}{6}  = \frac{12!}{6!\cdot6!} = 924. \] Per una spiegazione intuitiva potete vedere \url{https://www.youtube.com/watch?v=-bz3HSwQoaY&list=PLghwudMFTg5lkBJAIdnJlWFjthuvGz2_n&index=22}
+\end{sol}
+
+\begin{exe}
+	In quanti modi si possono distribuire $ 10 $ caramelle a $ 3 $ bambini? Ed in quanti modo si possono distribuire $ 10 $ caramelle tra $ 3 $ bambini se ogni bambino deve ricevere almeno $ 2 $ caramelle?
+\end{exe}
+
+\begin{sol}
+	La risposta alla prima domanda è
+	\[ \binom{12}{10} = \frac{12!}{10!\cdot2!} = 66, \]
+	per una spiegazione intuitiva vedere \url{https://www.youtube.com/watch?v=jhCCjvXysas&list=PLghwudMFTg5lkBJAIdnJlWFjthuvGz2_n&index=18}.\\ Per la seconda domanda si danno prima $2$ caramelle ad ogni bambino, rimanendo con $10 - 3 \cdot 2 = 4$ caramelle da distribuire liberamente tra i $3$ bambini. La risposta è:
+	\[ \binom{6}{4} = \frac{6!}{4!\cdot2!} = 15. \]
+	Trovate un video di un problema simile al seguente link\\ \url{https://www.youtube.com/watch?v=ekg4T7r6xRk&list=PLghwudMFTg5lkBJAIdnJlWFjthuvGz2_n&index=20}.
+\end{sol}
+
+\begin{exe}[$\star$]  Sia $ f:A \to B $ una funzione tra due insiemi $ A $ e $ B $.
+	\begin{enumerate}
+		\item Calcolare quante sono tutte le possibili \textbf{funzioni} sapendo che l'insieme $ A $ ha $ 5 $ elementi e l'insieme $ B $ ha $ 4 $ elementi.
+		\item  Con gli stessi insiemi di prima calcolare quante sono le possibili \textbf{funzioni suriettive}.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Per essere delle funzioni ad ogni elemento di A deve essere associato uno ed un solo elemento di B, per il resto non ci sono altre restrizioni. Dunque questo problema può essere rivisto come dovere distribuire $ 5 $ caramelle (che rappresentano i cinque elementi di A) a $ 4 $ bambini (che rappresentano i quattro elementi di B); dunque (sfruttando i ragionamenti dell'esercizio precedente) la risposta è:
+		      \[ \binom{8}{3} = \frac{8!}{5!\cdot3!} = 56 \ \text{funzioni possibili.} \]
+		\item In questo caso le funzioni devono essere anche suriettive, ovvero ad ogni elemento di B deve essere associato almeno un elemento di A. Questo è equivalente al problema di dare $ 5 $ caramelle a $ 4 $ bambini in modo che ogni bambino riceva almeno una caramella. Dunque la risposta al problema vale:
+		      \[ \binom{4}{3} = \frac{4!}{3!\cdot1!} = 4. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Sia $ f: \mathbb{R}^n \to \mathbb{R} $ funzione di classe $ C^k $.
+	\begin{itemize}
+		\item Quante derivate di ordine esattamente pari a $ k $ si possono calcolare?
+		\item Ricordare il teorema di Schwarz, quante sono le derivate parziali miste che coincidono con la derivata $ \frac{\partial f}{\partial x_1^3\ \partial x_2^2\ \partial x_4^4} $?
+	\end{itemize}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Nel primo caso devo fare una derivata di ordine $ k $, cioè devo scegliere $ k $ delle $ n $ coordinate e tengo conto dell'ordine. Dunque in questo caso ho $ n^k $ possibilità.
+		\item Il teorema di Schwarz, sotto opportune ipotesi, in sostanza afferma che non conta l'ordine con il quale vengono eseguite le derivate parziali. Dunque tutte le permutazioni delle coordinate nella derivata $ \frac{\partial f}{\partial x_1^3\ \partial x_2^2\ \partial x_4^4} $ coincidono con essa, in totale sono $ \frac{(3+2+4)!}{3!\cdot2!\cdot4!} = 1260, $ cioè corrispondono agli anagrammi della parola $ x_1x_1x_1x_2x_2x_4x_4x_4x_4 $.
+	\end{enumerate}
+\end{sol}
+
+\section{Probabilità}
+
+\begin{exe}
+	Qual è la probabilità che lanciando due dadi escano:
+	\begin{itemize}
+		\item due $ 4 $;
+		\item un $ 3 $ e un $ 5 $;
+		\item due numeri pari;
+		\item due numeri la cui somma è $ 9 $;
+		\item due numeri uguali.
+	\end{itemize}
+\end{exe}
+
+\begin{sol}Notiamo che i lanci dei due dadi sono due eventi indipendenti.
+	\begin{enumerate}
+		\item La probabilità di ottenere due volte il numero $ 4 $, grazie all'indipendenza vale $ \frac16 \cdot \frac16 = \frac{1}{36}. $
+		\item Per ottenere un $ 3 $ e un $ 5 $ posso avere due casi: il primo dado esce $ 3 $ e il secondo esce $ 5 $, oppure il primo dado esce $ 5 $ e il secondo esce $ 3 $. Dunque la probabilità è:
+		      \[ \frac16 \cdot \frac16 + \frac16 \cdot \frac16 = 2\cdot \frac{1}{36} = \frac{1}{18}. \]
+		\item I numeri pari sono $ 2, 4, 6 $, cioè tre su sei disponibili. Per indipendenza la probabilità che escano due numeri pari vale $ \frac12 \cdot \frac12 = \frac{1}{4}. $
+		\item Lanciando due dadi tutte le possibili coppie che si possono ottenere sono $ 36 $, quelle che danno come somma $ 9 $ sono esattamente $ (3, 6), (4,5), (5,4), (6,3) $, da cui:
+		      \[ \text{probabilità} = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{4}{36} = \frac19. \]
+		\item Posso immaginare di lanciare i due prima un dado, dal quale può uscire un numero qualunque (probabilità pari a $ 1 $), e dal secondo deve uscire lo stesso numero del precedente (probabilità pari ad $ \frac16 $). Dunque la probabilità che escano due numeri uguali è pari a $ \frac16 $.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Da un mazzo da $ 52 $ carte se ne estrae una. Calcolare la probabilità che sia:
+	\begin{itemize}
+		\item una carta di picche o una figura di cuori.
+		\item una figura o una carta rossa.
+	\end{itemize}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item I casi possibili sono il numero di carte ($ 52 $) mentre i vasi favorevoli sono il numero di carte di picche o di una figura di cuori ($ 13 + 3 = 16 $). La probabilità vale
+		      \[ \text{probabilità} = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{16}{52} = \frac{4}{13}. \]
+		      Notiamo che in questo caso i due eventi erano disgiunti quindi la probabilità finale si poteva anche calcolare come la somma della probabilità di trovare una carta di picche con la probabilità di trovare una figura di cuori, ovvero: $ \frac{13}{52}+\frac{3}{52} = \frac{4}{13}. $
+		\item In questo caso la probabilità vale:
+		      \[ \text{probabilità} = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{3+3+26}{52} = \frac{8}{13}, \]
+		      $ 3 $ figure di picche, $ 3 $ figure di fiori e $ 26 $ carte rosse (le figure sono già comprese). In questo caso gli eventi non erano disgiunti quindi si poteva anche calcolare la probabilità usando la formula
+		      \[ P(A \cup B ) = P(A) + P(B) - P(A \cap B)  \]
+		      con cui si riottiene il risultato precedente.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Una macchina produce pezzi meccanici e, su una produzione di $ 400 $ pezzi, $ 20 $ sono difettosi per peso, $ 30 $ per lunghezza e $ 360 $ sono perfetti. Calcola la probabilità che, prendendo a caso un pezzo:
+	\begin{enumerate}
+		\item sia difettoso;
+		\item abbia entrambi i difetti;
+		\item gli eventi $ E_1 = pezzo\ difettoso\ per\ peso $ e $ E_2 = pezzo\ difettoso\ per\ lunghezza $ sono indipendenti?
+	\end{enumerate}
+\end{exe}
+
+\begin{sol} Cominciamo col notare che essere difettosi per peso non esclude la possibilità di essere difettosi per lunghezza, infatti per fare in modo che i conti tornano deve essere che $ 360 $ pezzi sono perfetti, $ 10 $ abbiano entrambi i difetti, $ 10 $ sono difettosi solo per peso e $ 20 $ sono difettosi solo per lunghezza.
+	\begin{enumerate}
+		\item Ci sono in totale $ 400 $ pezzi di cui $ 40 $ presentano almeno un difetto quindi l a probabilità vale
+		      \[ \text{probabilità} = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{40}{400} = \frac{1}{10}. \]
+		\item nell'analisi preliminare abbiamo visto che solo $ 10 $ pezzi presentano entrambi i difetti, dunque si ha
+		      \[ \text{probabilità} = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{10}{400} = \frac{1}{40}. \]
+		\item I due eventi non indipendenti poiché la probabilità di avere entrambi i difetti non è uguale alla probabilità di essere difettosi per peso per la probabilità di essere difettosi per lunghezza:
+		      \[ \frac{10}{400} \ne \frac{20}{400}\cdot \frac{30}{400} = \frac{3}{800}. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Un'urna contiene $ 8 $  palline rosse e $ 4 $ gialle. Calcola la probabilità che, estraendo consecutivamente due palline senza rimettere la pallina estratta nell'urna esse siano:
+	\begin{enumerate}
+		\item due palline rosse;
+		\item due palline gialle;
+		\item la prima rossa e la seconda gialla;
+		\item una pallina rossa e l'altra gialla.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Siccome non vengono reinserite le pallina nell'urna al primo tentativo ho una probabilità pari a $ 8/12 $ e al secondo tentativo $ 7/11 $, quindi la probabilità finale vale
+		      \[ \frac{8}{12} \cdot \frac{7}{11} = \frac{14}{33}. \]
+		\item Come nel caso precedente $ \frac{4}{12} \cdot \frac{3}{11} = \frac{1}{11}. $
+		\item $ \frac{8}{12} \cdot \frac{4}{11} = \frac{8}{33}. $
+		\item In questo caso basta che una pallina sia rossa e l'altra sia gialli, ovvero deve sommare le probabilità dei due eventi disgiunti: prima rossa seconda gialla, prima gialla e seconda rossa. Da cui
+		      \[ \frac{8}{12} \cdot \frac{4}{11} + \frac{4}{12} \cdot \frac{8}{11} = 2 \cdot \frac{8}{12} \cdot \frac{4}{11} = \frac{16}{33}. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Vi è un'urna contenente $ 8 $ palline rosse, $ 5 $ blu, $ 7 $ bianche. Estraggo due volte,
+	re-inserendo nell'urna la prima pallina estratta. Qual è la probabilità che alla
+	prima estrazione esca una pallina rossa o bianca e alla seconda estrazione esca
+	una pallina blu.
+\end{exe}
+
+\begin{sol}
+	In questa situazione c'è reimbussolamento quindi gli eventi sono indipendenti. La probabilità per il primo evento è pari a $ \frac{8+7}{20} = \frac34 $, mentre il secondo è pari a $ \frac{5}{20} = \frac14 $, dunque la probabilità finale vale $ \frac34 \cdot \frac14 = \frac{3}{16} $
+\end{sol}
+
+\begin{exe}
+	Ho un mazzo di $ 52 $ carte (da poker) ed estraggo direttamente $ 2 $ carte. Qual
+	è la probabilità che le carte estratte siano:
+	\begin{enumerate}
+		\item due figure?
+		\item una figura la prima e un asso la seconda?
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Siccome non rimetto dentro la carta estratta e siccome il numero totale delle figure in un mazzo da $ 52 $ è $ 12 $, per la prima ho probabilità $ \frac{12}{52} $ e per la seconda $ \frac{11}{51} $, quindi la probabilità finale è il prodotto delle due, ovvero $ \frac{11}{221}. $
+		\item Come prima la probabilità finale vale $ \frac{12}{52} \cdot \frac{4}{51} = \frac{4}{221} $.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Un commesso ha mescolato i barattoli di legumi sullo scaffale di un supermercato. Sappiamo che ci sono $ 7 $ barattoli di piselli, $ 9 $ barattoli di fagioli e $ 6 $ barattoli di lenticchie. Si prendono consecutivamente $ 3 $ barattoli. Calcola la probabilità che:
+	\begin{enumerate}
+		\item siano tutti di piselli;
+		\item uno sia di piselli e due di fagioli;
+		\item ce ne sia uno per tipo;
+		\item non ci sia alcun barattolo di lenticchie.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Immagino come se fossero $ 3 $ estrazioni consecutive senza reimmissione, quindi in modo analogo al precedente si ha che la probabilità vale:
+		      \[ \frac{7}{22}\cdot \frac{6}{21}\cdot \frac{5}{20} = \frac{1}{44}. \]
+		\item In modo analogo a prima:
+		      \[ \frac{3!}{2!\cdot1!} \frac{7}{22}\cdot \frac{9}{21}\cdot \frac{8}{20} = \frac{9}{55}; \]
+		      dove il primo coefficiente corrispondono agli anagrammi della parola $ PFF $, poiché devo considerare i casi in cui prendo la scatola di piselli al primo, al secondo o alla terza estrazione.
+		\item Esattamente come il caso precedente
+		      \[ 3! \frac{7}{22}\cdot \frac{9}{21}\cdot \frac{6}{20} = \frac{27}{110}. \]
+		\item I barattoli che non sono di lenticchie sono $ 7+9=16 $, dunque devo prendere $ 3 $ tra questi $ 16 $, da cui:
+		      \[ \frac{16}{22}\cdot \frac{15}{21}\cdot \frac{14}{20} = \frac{4}{11}. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Si hanno due urne. La prima contiene $ 4 $ palline bianche e $ 6 $ rosse, la seconda ne contiene $ 3 $ bianche e $ 5 $ rosse. Calcola la probabilità che, estraendo una pallina da ciascuna urna, esse siano:
+	\begin{enumerate}
+		\item entrambe bianche;
+		\item bianca dalla prima urna e rossa dalla seconda urna;
+		\item una bianca e una rossa.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{enumerate}
+		\item Deve uscire una pallina bianca dalla prima urna ed una pallina bianca dalla seconda urna, da cui:
+		      \[ \frac{4}{10}\cdot \frac{3}{8} = \frac{3}{20}. \]
+		\item In modo analogo al precedente:
+		      \[ \frac{4}{10}\cdot \frac{5}{8} = \frac14.\]
+		\item Quindi può essere che esca bianca dalla prima e rossa dalla seconda o viceversa, da cui
+		      \[ \frac{4}{10}\cdot \frac{5}{8} + \frac{6}{10}\cdot \frac{3}{8} = \frac{19}{40}.\]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}[Paradosso dei compleanni]
+	Calcolare la probabilità che in una classe di $ 40 $ persone almeno $ 2 $ siano nate nello stesso giorno.
+\end{exe}
+
+\begin{sol}
+	In questo caso sia $ A $ l'evento di cui si vuole calcolare la probabilità, usiamo la formula dell'evento complementare $ P(A) = 1 - P(A^c) $. Calcolare la probabilità dell'evento complementare equivale a calcolare la probabilità che tutte le persone siano nate in giorni differenti. Data una qualunque persona del gruppo (indipendentemente dalla data del suo compleanno), vi sono 364 casi su 365 in cui il compleanno di una seconda persona avvenga in un giorno diverso; se si considera una terza persona, ci sono 363 casi su 365 in cui compie gli anni in un giorno diverso dalle prime due persone e via dicendo. Quindi si ottiene
+	\[ \begin{split}
+			P(A) & = 1 - P(A^c)                                                                                                                              \\
+			     & = 1 - 1\cdot \frac{364}{365} \cdot \frac{363}{365} \cdot \frac{362}{365} \cdots \frac{326}{365} = 1- \frac{364!}{365^{39}\cdot (365-40)!} \\
+			     & \approx 0,8912.
+		\end{split} \]
+\end{sol}
+
+
+
+\section{Processo di Bernoulli}
+
+\begin{exe}
+	Un esame universitario consiste in un quiz a crocette con $ 10 $ domande a risposta multipla con $ 4 $ possibilità di risposta per ciascuna domanda e la risposta corretta è una sola. Si passa l'esame se in totale si compiono al massimo due errori. Qual è la probabilità di passare l'esame se si risponde a caso a tutte le domande?
+\end{exe}
+
+\begin{sol}
+	Poiché la risposta corretta è una sola e si risponde completamente a caso alle domande la probabilità di rispondere correttamente è pari a $ 1/4 $ e la probabilità di fare un errore è pari a $ 3/4 $. Per passare il test si devono compiere al massimo due errori, dunque chiamando $ X = ``numero\ di\ errori\ commessi" $ allora la probabilità di passare il test è pari a $ P(X \le 2) = P(X = 0 \ o \ X = 1 \ o \ X=2) $, essendo gli eventi disgiunti è pari a $ P(X \le 2) = P(X=0) + P(X+1) + P(X=2) $. Utilizzando la distribuzione binomiale (processo di Bernoulli) con $ n=10 $, $ p=3/4 $ e $ k $ rispettivamente $ 0, 1, 2 $ si ottiene:
+	\[ \begin{split}
+			P(X \le 2) & = P(X=0) + P(X+1) + P(X=2)                                                                                                                                                                                           \\
+			           & = \binom{10}{0}\left( \frac34\right)^{0}\left( \frac14\right)^{10}+\binom{10}{1}\left( \frac34\right)^{1}\left( \frac14\right)^{9}+\binom{10}{2}\left( \frac34\right)^{2}\left( \frac14\right)^{8} \approx 0,000416.
+		\end{split} \]
+	Notiamo che si può risolvere equivalentemente il problema calcolando $ P(X \ge 8) $ con \\ $ X = ``numero\ di\ risposte\ esatte" $.
+\end{sol}
+
+\begin{exe}
+	Per un corso di studi universitario con laurea triennale, la probabilità che uno studente
+	che si iscrive al primo anno si laurei effettivamente è $ p = 0.6 = \frac35 $. Qual è la probabilità che, su $ 10 $ studenti immatricolati,
+	\begin{enumerate}
+		\item  nessuno si laurei;
+		\item uno si laurei;
+		\item almeno uno si laurei;
+		\item tutti si laureino.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol} Chiamiamo $ X = ``numero\ di\  studenti \ che\ si\ laureano" $
+	\begin{enumerate}
+		\item Utilizziamo la variabile aleatoria binomiale con $ n=10 $, $ k=0 $, $ p = 0,6 $ ed otteniamo
+		      \[ P(X=0) = \binom{10}{0}\left( 0.6\right)^{0}\left( 0.4\right)^{10} \approx 0,000105. \]
+		\item  Analogamente a prima ma con $ k=1 $
+		      \[ P(X=1) = \binom{10}{1}\left( 0.6\right)^{1}\left( 0.4\right)^{9} \approx 0,00157. \]
+		\item Dobbiamo calcolare $ P(X\ge 1) $ che utilizzando la formula per il calcolo della probabilità del complementare è pari a $ P(X\ge 1) = 1 - P(X < 1) = 1 - P(X=0) $ ed utilizzando la probabilità calcolata al primo punto si ottiene $  P(X\ge 1) = 1 - 0,000105= 0,999895.$
+		\item In questo caso $ k=10 $
+		      \[ P(X=1) = \binom{10}{10}\left( 0.6\right)^{10}\left( 0.4\right)^{0} \approx 0,00605. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Ho un mazzo di $ 40 $ carte (da briscola) ed estraggo per $ 5 $ volte una carta rimettendo ogni
+	volta la carta estratta nel mazzo. Introdotta la variabile aleatoria “X = numero delle volte in cui esce un Re” e richiamato il concetto di distribuzione binomiale, calcolare
+	\begin{enumerate}
+		\item la probabilità $ P({X \le 1}) $, cioè che un Re esca al più una volta nelle estrazioni;
+		\item la probabilità che un Re esca almeno una volta;
+		\item la media (o valore atteso), la varianza e la deviazione standard (o scarto quadratico medio) per la variabile aleatoria $ X $.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol} Per questo esercizio siccome dopo ogni estrazione la carta viene rimessa nel mazzo è possibile utilizzare una variabile aleatoria binomiale con $ n=5 $, poiché viene detto che vengono fatte $ 5 $ estrazioni; inoltre vale che la probabilità di successo, cioè la probabilità che esca un re è pari a $ p = \frac{4}{40} = \frac{1}{10} $.
+	\begin{enumerate}
+		\item Utilizzando che $ P(X \le 1) = P(X=0 \ o \ X=1) = P(X=0) + P(X=1) $ si ha:
+		      \[ P(X \le 1) = \binom{5}{0}\left( \frac{1}{10}\right)^{0}\left( \frac{9}{10}\right)^{5} + \binom{5}{1}\left( \frac{1}{10}\right)^{1}\left( \frac{9}{10}\right)^{4} \approx 0,9185. \]
+		\item Utilizzando la formula per la probabilità complementare si ottiene:
+		      \[ \begin{split}
+				      P(X \ge 1) & = 1 - P(X<1) = 1 - P(X=0)                                                                      \\
+				                 & = 1 - \binom{5}{0}\left( \frac{1}{10}\right)^{0}\left( \frac{9}{10}\right)^{5} \approx 0,4095.
+			      \end{split}  \]
+		\item Essendo una variabile aleatoria binomiale di parametri $ n = 5 $ e $ p= 1/10 $ possiamo calcolare semplicemente media e varianza con i risultati visti in teoria:
+		      \[ \mathbb{E}[X] = n \cdot p = 5\cdot \frac{1}{10} = \frac{5}{10} = \frac12 \]
+		      \[ Var(X) = n\cdot p\cdot (1-p) = 5 \cdot \frac{1}{10}\cdot \frac{9}{10} = \frac{9}{20} = 0,45. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Calcolare in modo esplicito la densità discreta della legge binomiale $ Bin(5, 0.15) $,
+\end{exe}
+
+\begin{sol}
+	Sia $ X $ la variabile aleatoria binomiale ed indichiamo con $ p_{X} $ la densità di $ X $, per calcolare la densità in modo esplicito basta calcolare $ p_{X}(k) $ per $ k = 0, 1, 2, 3, 4, 5 $ per altri valori di $ k $ vale che $ P_X(k) = 0 $. La legge binomiale dice che vale la formula:
+	\[ p_{X}(k) = \binom{n}{k}\left(p\right)^{k}\left(1-p\right)^{n-k} = \binom{5}{k}\left(0.15\right)^{k}\left(0.85\right)^{5-k} \]
+	Sostituendo i valori di $ k $ e svolgendo i conti si ottengono (approssimando alla quarta cifra decimale) i seguenti valori
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			$ k $        & $ 0 $      & $ 1 $      & $ 2 $      & $ 3 $      & $ 4 $      & $ 5 $      \\
+			\hline
+			$ p_{X}(k) $ & $ 0.4437 $ & $ 0.3915 $ & $ 0.1382 $ & $ 0.0244 $ & $ 0.0021 $ & $ 0.0001 $
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{sol}
+
+\begin{exe}
+	Se lancio $ 2 $ dadi la probabilità di fare $ 12 $ é $ \frac{1}{36} $: dunque mi aspetto che in $ 36 $ lanci esca un $ 12 $. Qual é la probabilità che ciò accada? Qual é il minimo numero di lanci da fare affinché la probabilità di uscita di un $ 12 $ sia almeno $ 0.5 $?
+\end{exe}
+
+\begin{sol}
+	Sostanzialmente posso immaginare di compiere lo stesso esperimento $ 36 $ volte e ``vinco" quando il risultato viene pari a $ 12 $, cioè posso utilizzare una variabile aleatoria binomiale di parametri $ n=36 $, $ k=1 $ e $ p=1/36 $, chiamando $ X = ``numero\ di \ volte\ che\ esce\ 12" $, si ha
+	\[ P(X\ge1) = 1 -P(X=0) = 1- \binom{36}{0}\left( \frac{1}{36}\right)^{0}\left( \frac{35}{36}\right)^{36} \approx 0,6373.  \]
+	Ora devo trovare il valore di $ n $ minimo in modo che $ P(X=1) \ge 0,5 $, ovvero
+	\[  \begin{split}
+			P(X=1) & = 1 -P(X=0) = 1- \binom{n}{0}\left( \frac{1}{36}\right)^{0}\left( \frac{35}{36}\right)^{n} \\
+			       & = 1 -  \left( \frac{35}{36}\right)^{n} \ge 0.5
+		\end{split} \]
+	Da cui si ricava
+	\[ n\cdot \log\left( \frac{35}{36}\right) \le \log(1-0,5) \implies n\ge \frac{\log(2)}{\log(35) - \log(36)}\approx 24,6 \implies n=25.  \]
+\end{sol}
+
+\section{Processo di Poisson}
+\begin{exe} Una folla di persone aspetta in fila indiana il taxi, alla stazione centrale. Sia $ X $ il numero di taxi che passa in un'ora e $ N $ il numero medio di texi che passano in un'ora ($ N $ è noto).
+	\begin{enumerate}
+		\item Sotto quali ipotesi sul fenomeno si può assumere che $ X $ sia una variabile aleatoria di Poisson?
+		\item Ci si mette d'ora in poi nelle ipotesi del punto precedente. Se $ N = 20 $, qual è la probabilità che nella prossima mezz'ora passino esattamente $ 5 $ taxi?
+		\item Nelle ipotesi precedenti qual è la probabilità che nella prossima mezz'ora passino non più di $ 5 $ taxi?
+		\item  Qual'è la probabilità che nella prossima mezz'ora passino almeno $ 7 $ taxi?
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	\begin{enumerate}
+		\item Occorre ipotizzare che vi sia un numero molto grande di taxi e che ognuno abbia la stessa (piccola) probabilità di capitare alla stazione centrale, indipendentemente dagli altri taxi.
+		\item Il numero di taxi che arrivano in mezz'ora è descritto da una variabile $ Z $ di Poisson di parametro $ \lambda = N/2 = 10 $. Quindi la probabilità richiesta è data da:
+		      \[ P(Z = 5) = e^{-\lambda} \frac{\lambda^{k}}{k!} = e^{-10}\frac{10^{5}}{5!} \approx 0,03783. \]
+		\item Utilizzando ancora la variabile aleatoria $ Z $ e $ \lambda = 10 $, la probabilità richiesta vale
+		      \[ P(Z \le 5) = e^{-\lambda} \sum_{k=0}^{5}\frac{\lambda^{k}}{k!} = e^{-10}\left( \frac{10^{0}}{0!} + \frac{10^{1}}{1!} + \cdots \frac{10^{5}}{5!}\right) \approx 0,0671. \]
+		\item Utilizzando ancora la variabile aleatoria $ Z $ e $ \lambda = 10 $ e sfruttando la formula per la probabilità complementare, si ottiene
+		      \[ P(Z \ge 7) = 1 - P(Z \le 6) = 1 - e^{-\lambda} \sum_{k=0}^{6}\frac{\lambda^{k}}{k!} = 1 - e^{-\lambda} \left(\frac{10^{6}}{6!} + \sum_{k=0}^{5}\frac{\lambda^{k}}{k!} e^{-10} \right) \approx 0,8699. \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Un apparecchio elettronico produce mediamente $ N $ impulsi al secondo. Sapendo che il numero di impulsi segue una legge di Poisson, stabilire la probabilità che in $ 1000 $ secondi si verifichino almeno $ 2500 $ impulsi;
+\end{exe}
+
+\begin{sol}
+	Sia $ X_t $ il processo di Poisson che descrive il numero di impulsi prodotti nel tempo $ t $ (in secondi). Poiché $ X_{1000} ~ P(1000 N) $, la probabilità richiesta è data da
+	\[ P(X_{1000} \ge 2500) = 1 - P(X_{1000} \le 2499) = 1 - e^{1000 N}\sum_{k=0}^{2499}\frac{(1000N)^k}{k!}. \]
+\end{sol}
+
+\section{Variabili aleatorie continue}
+
+\begin{exe}
+	Sia $ X $ una variabile aleatoria continua di densità:
+	\[ F_{X}(t) = ct(1-t)^2 \mathds{1}_{(0,1)}(t).\]
+	\begin{enumerate}
+		\item Determinare il valore della costante $ c $ in modo tale che $ f_{X}(t) $ risulti una densità.
+		\item Calcolare il valore atteso di $ X $.
+		\item Calcolare l'espressione analitica della funzione di ripartizione $ F_{X}(t) $.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	\begin{enumerate}
+		\item Per fare in modo che sia una densità il suo integrale su tutto $ \mathbb{R} $ deve valere $ 1 $, quindi otteniamo
+		      \[ \begin{split}
+				      \int_{\mathbb{R}} f_{X}(t) \ dt & = c \int_{0}^{1} t(1-t)^2 \ dt = c\int_{0}^{1}(t^3 -2t^2 + t) \ dt                           \\
+				                                      & = c \left[\frac{t^4}{4} - 2 \frac{t^3}{3} + \frac{t^2}{2}\right]_{0}^{1} = \frac{c}{12} = 1,
+			      \end{split}  \]
+		      quindi $ c = 12 $
+		\item Usiamo la definizione di valor atteso per variabili aleatorie continue
+		      \[ \mathbb{E}[X] = \int_{\mathbb{R}} t f_{X}(t) \ dt = 12 \int_{0}^{1}(t^4 - 2t^3 + t^2) \ dt = 12 \left[\frac{t^5}{5} - 2 \frac{t^4}{4} + \frac{t^3}{3}\right]_{0}^{1} = \frac25. \]
+		\item Per $ t \le 0$ si ha che $ F_X(t) = 0 $, mentre per $ t \ge 1 $ vale che $ F_{X}(t) = 1 $, per $ 0 < t < 1 $ occorre calcolare l'integrale e si ha
+		      \[ F_{X}(t) = \int_{-\infty}^{t}f_{X}(s) \ ds = 12 \int_{0}^{t}(s^3 -2s^2 + s) \ ds = 3t^4 - 8t^3 + 6t^2.\]
+		      In definitiva:
+		      \[ F_{X}(t) = \begin{cases}
+				      0                  & \text{per} \ t\le 0  \\
+				      3t^4 - 8t^3 + 6t^2 & \text{per} \ 0<t<1   \\
+				      1                  & \text{per} \ t \ge 1 \\
+			      \end{cases} \]
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	Calcolare il valore atteso della variabile aleatoria $ X $ avente come funzione di ripartizione:
+	\[ F_{X}(t) = \begin{cases}
+			1- \frac{1}{(1+t)^2} & \text{per} \ t>0   \\
+			0                    & \text{per} \ t\le0 \\
+		\end{cases} \]
+\end{exe}
+
+\begin{sol}
+	La densità della variabile aleatoria continua ha supporto per $ t>0 $ e si calcola facendo la derivata della funzione di ripartizione:
+	\[ f_{X}(t) = \frac{d}{dt} F_{X}(t) = \frac{2}{(1+t)^3}\mathds{1}_{(0, +\infty)}(t). \]
+	Ora che abbiamo calcolato la densità di probabilità possiamo calcolare il valore atteso:
+	\[ \begin{split}
+			\mathbb{E}[X] & = \int_{\mathbb{R}}tf_{X}(t) \ dt = \int_{0}^{+\infty} \frac{2t}{(1+t)^3} \ dt = 2 \int_{0}^{+\infty}\frac{t+1-1}{(1+t)^3} \ dt                                          \\
+			              & = 2 \int_{0}^{+\infty}\frac{t+1}{(1+t)^3} - \frac{1}{(1+t)^3} \ dt =  2\left(  \int_{0}^{+\infty}\frac{1}{(t+1)^2}\ dt - \int_{0}^{+\infty}\frac{1}{(t+1)^3} \ dt\right) \\
+			              & = \left[-\frac{1}{t+1} + \frac{1}{2(t+1)^2}\right]_{0}^{+\infty} = 1
+		\end{split} \]
+\end{sol}
+
+\begin{exe}
+	Trovare il valore della costante $ k \in \R $ in modo che la funzione $ f : \R \to \R $ definita da:
+	\[ f(x) := \begin{cases}
+			0   & \mbox{per}\ x \le -2 \ \mbox{e}\ x \ge 1 \\
+			k   & \mbox{per}\ -2<x<0                       \\
+			1-x & \mbox{per}\ 0 \le x <1
+		\end{cases} \]
+	sia una densità di probabilità per la variabile aleatoria continua $ X $. Una volta trovato il valore di $ k $, determinare la funzione di distribuzione $ F(x) $ e calcolare la probabilità $ P(-1<X<2) $.
+\end{exe}
+
+\begin{sol}\mbox{}\vspace{-0.7cm}\\
+	\begin{itemize}
+		\item  Per essere una densità il suo integrale su tutto $ \mathbb{R} $ deve fare $ 1 $, quindi
+		      \[ \int_{\mathbb{R}} f(x) \ dx = \int_{-\infty}^{-2}0 \ dx + \int_{-2}^{0}k \ dx + \int_{0}^{1}(1-x)\ dx + \int_{1}^{+\infty} 0 \ dx = 2k + \frac12 = 1, \]
+		      da cui $ k = 1/4. $
+		\item Calcoliamo ora la funzione di ripartizione con la definizione $ F(x) = \int_{-\infty}^{x} f(t) \ dt $, separando tutti i casi si ottiene
+		      \[ F(x) = \begin{cases}
+				      0                                                             & \text{per} \ x < -2       \\
+				      \int_{-2}^{x}\frac14 \ dt = \frac14(x+2)                      & \text{per} \ -2 \le x < 0 \\
+				      \frac12 + \int_{0}^{x} (1-t)\ dt = \frac12 + x -\frac{x^2}{2} & \text{per} \ 0 \le x < 1  \\
+				      1                                                             & \text{per} \ x \ge 1      \\
+			      \end{cases} \]
+		\item Per il calcolo della probabilità possiamo o usare la definizione con il calcolo dell'integrale:
+		      \[ P(-1 < X < 2) = \int_{-1}^{2}f(t) \ dt = \int_{-1}^{0} \frac{1}{4} \ dt + \int_{0}^{1}(1-t) \ dt = \frac{3}{4}.\]
+		      Oppure si può calcolare sfruttando la funzione caratteristica calcolata al punto precedente e le sue proprietà:
+		      \[ P(-1 < X < 2) = F(2) - F(1) = \frac34 . \]
+		      Notiamo che tutti gli integrali precedenti si potevano anche calcolare con il calcolo di aree.
+	\end{itemize}
+\end{sol}
+
+\begin{exe}
+	Trovare il valore del numero reale $ a > 0 $ tale che la funzione $ f : \R \to \R $ definita da
+	\[ f(x) = \begin{cases}
+			0   & \mbox{per} \ x < -1 \ \mbox{e} \ x \ge a, \\
+			x^2 & \mbox{per} \ -1\le x \le 0,               \\
+			1   & \mbox{per} \ 0 < x < a                    \\
+		\end{cases} \]
+	sia una densità di probabilità per la variabile aleatoria continua $ X $.
+	\begin{enumerate}
+		\item Una volta trovato il valore di a, determinare la funzione di distribuzione $ F(x) $;
+		\item calcolare le probabilità $ P(X > 0)$ e $ P \left(-\frac{1}{2} \le X \le \frac{1}{2} \right)  $.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	\begin{enumerate}
+		\item Per far si che $ f $ sia una funzione di densità dobbiamo chiedere che l'integrale su tutto $ \mathbb{R} $ sia pari ad $ 1 $, da cui
+		      \[ \int_{\mathbb{R}} f(x) \ dx = \int_{-\infty}^{-1} 0 \ dx + \int_{-1}^{0} x^2 \ dx + \int_{0}^{a} 1 \ dx + \int_{a}^{+\infty}0 \ dx = \frac13 + a = 1 \]
+		      e quindi deve essere che $ a = \frac23. $
+		\item Per fare il calcola delle probabilità cominciamo a calcolare la funzione caratteristica
+		      \[ F(x) = \begin{cases}
+				      0                                               & \text{per} \ x < -1            \\
+				      \int_{-1}^{x}t^2 \ dt = \frac{x^3}{3} + \frac13 & \text{per} \ -1 \le x < 0      \\
+				      \frac13 + \int_{0}^{x} 1\ dt = \frac13 + x      & \text{per} \ 0 \le x < \frac23 \\
+				      1                                               & \text{per} \ x \ge \frac23     \\
+			      \end{cases} \]
+		      Possiamo ora calcolare le aree richieste utilizzando la funzione caratteristica, ottenendo
+		      \[ P(X \ge0) = 1 - P(X <0) = 1 - P(X \le 0) = 1 - F(0) = \frac23 \]
+		      \[ P\left(-\frac12 \le X \le \frac12\right) = P\left(X \le \frac12\right) - P\left(X \le -\frac12\right) = F\left(\frac12\right) - F\left(-\frac12\right) = \frac{13}{24}. \]
+	\end{enumerate}
+\end{sol}
+
+
+\section{Distribuzione normale (o gaussiana)}
+
+\begin{exe}
+	Sia $ X $ una variabile aleatoria normalmente distribuita con media $ 3.5 $ e varianza $ 0.5625 $.
+	Calcolare le probabilità:
+	\begin{enumerate}
+		\item $ P(X \le 5) $;
+		\item $ P(X \ge 1.25) $.
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	Per calcolare tale probabilità dobbiamo rendere la variabile normale $ X $ una variabile aleatoria normale standard così da utilizzare le tavole, per farlo utilizziamo la formula $ Z = \dfrac{X - \mu}{\sigma} $, in particolare si ha che $ \dfrac{5 - 3.5}{\sqrt{0,5625}} = 2  $ e quindi
+	\[ P(X \le 5) = P(Z \le 2) = 0,9772. \]
+	In modo analogo
+	\[ P(X \ge 1.25) = P(Z \ge -3) = P(Z \le 3) = 0,9987. \]
+\end{sol}
+
+\begin{exe}
+	Sia $ X $ una variabile aleatoria distribuita normalmente.
+	\begin{enumerate}
+		\item  Se $ X $ ha media $ \mu = 2.3 $ e deviazione standard $ \sigma = 0.08 $, calcolare la probabilità
+		      \[ P(2.276 < X < 2.316). \]
+		\item  Se ora $ X $ è un'altra variabile aleatoria distribuita normalmente tale che $ P (X < 2.5) = 0.5 $ e $ P(X < 2.55) = 0.6915 $, quanto valgono i valori $ \mu $ e $ \sigma $ relativi a $ X $?
+	\end{enumerate}
+\end{exe}
+
+\begin{sol}
+	\begin{enumerate}
+		\item In modo normale a prima si deve trasformare $ X $ in una normale standard con la formula $ X = \dfrac{X - \mu}{\sigma} $, quindi la probabilità richiesta vale
+		      \[ \begin{split}
+				      P(2,276 < X < 2,316) & = P(-0,3 \le Z \le 0,2) = P(Z \le 0,2) - P(Z \le -0,3)    \\
+				                           & = P(Z \le 0,2) - (1 - P(Z \ge -0,3)) = 0,5793 -1 + 0,6179 \\
+				                           & = 0,1972.
+			      \end{split} \]
+		\item Utilizzando le tavole per la normale possiamo dire che
+		      \[ \begin{cases}
+				      P(X < 2,5) = 0,5 \\
+				      P(X < 2,55) = 0,6915
+			      \end{cases} \to
+			      \begin{cases}
+				      P(Z < 0) = 0,5 \\
+				      P(Z < 0,5) = 0,6915
+			      \end{cases} \to
+			      \begin{cases}
+				      \frac{2,5 - \mu}{\sigma} = 0 \\
+				      \frac{2,55-\mu}{\sigma} = 0,5
+			      \end{cases} \]
+		      e risolvendo il sistema si ottiene $ \mu = 2,5 $ e $ \sigma = 0,1 $.
+	\end{enumerate}
+\end{sol}
+
+\begin{exe}
+	L'altezza di un gruppo di $ 100 $ studenti universitari è distribuita normalmente con media
+	$ \mu = 178\ cm $ e varianza $ \sigma^2 = 225\ cm^2 $. Qual è la probabilità che uno studente preso a caso fra questi $ 100 $ abbia statura.
+	\begin{enumerate}
+		\item  maggiore di $ 188\ cm $?
+		\item  minore di $ 165 \ cm $?
+		\item  compresa tra $ 173 $ e $ 183\ cm $?
+	\end{enumerate}
+\end{exe}
+\begin{sol}
+	Utilizzando le proprietà della normale standard, la formula di standardizzazione $  Z = \frac{X - \mu}{\sigma} $ e le tavole della distribuzione normale standard si possono calcolare le probabilità richieste
+	\[ P(X > 188) = P(Z > 0,67) = 1 - P(Z \le 0,67) = 1-0,7486 = 0,2514 \]
+	\[ P(X < 165) = P(Z < -0,87) = 1 - P(Z \le 0,87) = 1 - 0,8078 = 0,1922 \]
+	\[ \begin{split}
+			P(173 < X \le 183) & = P(-0,67 \le Z \le 0,67) = 2\cdot P(0 \le Z \le 0,67)                             \\
+			                   & =2\cdot \left( P(Z \le 0,67) - P(Z \le 0) \right) = 2\cdot(0,7486 - 0,5) = 0,4972.
+		\end{split} \]
+\end{sol}
+\begin{exe}
+	Il punteggio ottenuto dagli studenti per una prova scritta di un esame universitario del
+	primo anno di un corso di Scienze Naturali può essere modellizzato come una variabile aleatoria distribuita	normalmente con media $ 22 $ e varianza $ 9 $. Qual è la probabilità
+	\begin{enumerate}
+		\item  che uno studente ottenga un voto superiore al $ 25 $?
+		\item che uno studente ottenga un voto compreso tra $ 21 $ e $ 24 $?
+		\item che uno studente ottenga un voto inferiore al $ 18 $?
+	\end{enumerate}
+\end{exe}
+\begin{sol}
+	Utilizzando le proprietà della normale standard, la formula di standardizzazione $  Z = \frac{X - \mu}{\sigma} $ e le tavole della distribuzione normale standard si possono calcolare le probabilità richieste
+	\[ P(X > 25) = P(Z > 1) = 1 - P(Z \le1) = 1-0,8413 = 0,1587 \]
+	\[ \begin{split}
+			P(21 < X \le 24) & = P(-0,33 \le Z \le 0,67) =  P(Z \le 0,67) - P(Z \le -0,33)       \\
+			                 & = P(Z \le 0,67) -(1 - P(Z \le 0,33)) = 0,7486 -1 +0,6293 = 0,3779
+		\end{split} \]
+	\[ P(X < 18) = P(Z < -1,33) = 1 - P(Z \le 1,33) = 1 - 0,9082 = 0,0918. \]
+\end{sol}
+
+\end{document}

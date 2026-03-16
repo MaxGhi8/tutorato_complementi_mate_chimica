@@ -1,0 +1,357 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{yhmath}
+\usepackage[italian]{babel}
+% title
+\title{Foglio di esercizi\\Complementi di matematica per le scienze chimiche\\ Anno accademico 2025/26}
+\author{Massimiliano Ghiotto}
+\date{}
+% comandi per quesito e soluzione
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{sol}{Soluzione all'esercizio}
+\newtheorem{exe}{Esercizio}
+
+% insiemi numerici
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+% cartella figure
+\graphicspath{{figures/}}
+\begin{document}
+\maketitle
+\noindent
+Per qualsiasi domanda potete contattarmi per mail all'indirizzo:
+\\
+\textit{massimiliano.ghiotto01@universitadipavia.it}
+
+\section{Statistica descrittiva}
+
+\begin{exe}
+	La tabella seguente rappresenta, al variare dell'anno, il numero di milioni di barili di olio che gli Stati Uniti hanno importato dalla Norvegia
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			anno              & 1999 & 2000 & 2001 & 2002 & 2003 & 2004 & 2005 & 2006 & 2007 & 2008 & 2009 \\
+			\hline
+			milioni di barili & 96   & 110  & 103  & 127  & 60   & 54   & 43   & 36   & 20   & 11   & 22
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	Calcolarne:
+	\begin{enumerate}
+		\item  la media e la mediana;
+		\item la varianza e la deviazione standard.
+		\item calcolare i quartili e la distanza interquartile.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	A $ 1000 $ (mille) studenti iscritti all'Università di Pavia viene proposto un sondaggio dove in particolare si chiede di esprimere un giudizio su un servizio offerto agli studenti, usando una scala da
+	$ 1 $ a $ 6 $ ($ 1 $ = pessimo, $ 6 $ = eccellente). Le risposte ottenute sono riassunte qui sotto, dove per ognuno dei
+	giudizi fra parentesi vi è il numero di voti ottenuti.
+	\[
+		1\ (187)\quad 2\ (82)\quad 3\ (260)\quad 4\ (98)\quad 5\ (159)\quad 6\ (214) \]
+	\begin{enumerate}
+		\item  Calcolare media, moda, mediana dei risultati;
+		\item  determinare anche varianza e deviazione standard;
+		\item  fare un istogramma per visualizzare meglio i dati.
+	\end{enumerate}
+\end{exe}
+
+\section{Calcolo combinatorio}
+
+\begin{exe}
+	Cinque amici Ada, Beatrice, Carlo, Dario ed Emanuele si sfidano in una corsa di $ 1000 \ m$.
+	\begin{enumerate}
+		\item In quanti modi possono classificarsi i $ 5 $ amici?
+		\item Quanti modi ci sarebbero sapendo che Ada è arrivata seconda?
+		\item Quanti modi ci sarebbero se si sapesse soltanto che Ada è arrivata prima o seconda?
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Nel gioco del lotto sono presenti i numeri da $ 1 $ a $ 90 $ (cioè sono presenti $ 90 $ numeri in totale), quartina e cinquina sono rispettivamente sequenze di  $ 4 $ e $ 5 $ numeri distinti.
+	\begin{enumerate}
+		\item Calcolare quante cinquine sono possibili.
+		\item Calcolare la probabilità di fare cinquina (giocando cinque numeri).
+		\item Calcolare la probabilità di fare quartina (giocando cinque numeri).
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Il professor Layton si dimentica il codice di tre cifre del suo lucchetto per la bicicletta, decide allora di provare tutte le possibilità finché non trova quella corretta.
+	\begin{enumerate}
+		\item Calcolare la probabilità che indovini la combinazione del lucchetto al primo tentativo.
+		\item Calcolare la probabilità che indovini la combinazione del lucchetto al primo o al secondo tentativo.
+		\item Calcolare quante possibilità sapendo che nella combinazione che apre il lucchetto è presente almeno una cifra $ 3 $.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	La signora Erina Joestar vuole ridipingere le $ 5 $ pareti ($ 4 $ pareti laterali e il soffitto) della sua camera ed ha a disposizione $ 6 $ colori: giallo, verde, bianco, azzurro, rosa, arancione. Sapendo che ogni parete potrebbe essere colorata con un colore distinto calcolare:
+	\begin{enumerate}
+		\item quanti sono i possibili modi di colorare la stanza?
+		\item quanti sono i possibili modi per colorare la stanza sapendo che il soffitto ha deciso di farlo bianco?
+		\item quanti sono i possibili modi per colorare la stanza sapendo che Erina ha deciso che almeno una parete sarà bianca.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Quante diagonali ha un poligono di $ n $ lati?
+\end{exe}
+
+\begin{exe}
+	Un gruppo di $ 8 $ ragazzi vanno a vedere al cinema il nuovo film di Super Mario Bros, ai ragazzi viene assegnata un'intera fila del cinema da $ 15 $ posti. In quanti modi si possono disporre a sedere i ragazzi lungo la fila del cinema?
+\end{exe}
+
+\begin{exe}
+	In una scacchiera $ 7 \times 7 $ si trova una pedina nel vertice in basso a sinistra. Le mosse consentita dalla pedina sono:
+	\begin{itemize}
+		\item spostarsi di una casella verso destra;
+		\item  spostarsi di una casella verso l'alto.
+	\end{itemize}
+	Quanti percorsi possibili può percorrere la pedina per raggiungere il vertice in alto a destra della scacchiera?
+\end{exe}
+
+\begin{exe}
+	In quanti modi si possono distribuire $ 10 $ caramelle a $ 3 $ bambini? Ed in quanti modo si possono distribuire se ogni bambino deve ricevere almeno $ 2 $ caramelle?
+\end{exe}
+
+\begin{exe}[$\star$]  Sia $ f:A \to B $ una funzione tra due insiemi $ A $ e $ B $.
+	\begin{enumerate}
+		\item Calcolare quante sono tutte le possibili \textbf{funzioni} sapendo che l'insieme $ A $ ha $ 5 $ elementi e l'insieme $ B $ ha $ 4 $ elementi.
+		\item  Con gli stessi insiemi di prima calcolare quante sono le possibili \textbf{funzioni suriettive}.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Sia $ f: \mathbb{R}^n \to \mathbb{R} $ funzione di classe $ C^k $.
+	\begin{itemize}
+		\item Quante derivate di ordine esattamente pari a $ k $ si possono calcolare?
+		\item Ricordare il teorema di Schwarz, quante sono le derivate parziali miste che coincidono con la derivata $ \frac{\partial f}{\partial x_1^3\ \partial x_2^2\ \partial x_4^4} $?
+	\end{itemize}
+\end{exe}
+
+\section{Probabilità}
+
+\begin{exe}
+	Qual è la probabilità che lanciando due dadi escano:
+	\begin{itemize}
+		\item due $ 4 $;
+		\item un $ 3 $ e un $ 5 $;
+		\item due numeri pari;
+		\item due numeri la cui somma è $ 9 $;
+		\item due numeri uguali.
+	\end{itemize}
+\end{exe}
+
+\begin{exe}
+	Da un mazzo da $ 52 $ carte se ne estrae una. Calcolare la probabilità che sia:
+	\begin{itemize}
+		\item una carta di picche o una figura di cuori.
+		\item una figura o una carta rossa.
+	\end{itemize}
+\end{exe}
+
+\begin{exe}
+	Una macchina produce pezzi meccanici e, su una produzione di $ 400 $ pezzi, $ 20 $ sono difettosi per peso, $ 30 $ per lunghezza e $ 360 $ sono perfetti. Calcola la probabilità che, prendendo a caso un pezzo:
+	\begin{enumerate}
+		\item sia difettoso;
+		\item abbia entrambi i difetti;
+		\item gli eventi $ E_1 = pezzo\ difettoso\ per\ peso $ e $ E_2 = pezzo\ difettoso\ per\ lunghezza $ sono indipendenti?
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Un'urna contiene $ 8 $  palline rosse e $ 4 $ gialle. Calcola la probabilità che, estraendo consecutivamente due palline senza rimettere la pallina estratta nell'urna esse siano:
+	\begin{enumerate}
+		\item due palline rosse;
+		\item due palline gialle;
+		\item la prima rossa e la seconda gialla;
+		\item una pallina rossa e l'altra gialla.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Vi è un'urna contenente $ 8 $ palline rosse, $ 5 $ blu, $ 7 $ bianche. Estraggo due volte,
+	re-inserendo nell'urna la prima pallina estratta. Qual è la probabilità che alla
+	prima estrazione esca una pallina rossa o bianca e alla seconda estrazione esca
+	una pallina blu.
+\end{exe}
+
+\begin{exe}
+	Ho un mazzo di $ 52 $ carte (da poker) ed estraggo direttamente $ 2 $ carte. Qual
+	è la probabilità che le carte estratte siano:
+	\begin{enumerate}
+		\item due figure?
+		\item una figura la prima e un asso la seconda?
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Un commesso ha mescolato i barattoli di legumi sullo scaffale di un supermercato. Sappiamo che ci sono $ 7 $ barattoli di piselli, $ 9 $ barattoli di fagioli e $ 6 $ barattoli di lenticchie. Si prendono consecutivamente $ 3 $ barattoli. Calcola la probabilità che:
+	\begin{enumerate}
+		\item siano tutti di piselli;
+		\item uno sia di piselli e due di fagioli;
+		\item ce ne sia uno per tipo;
+		\item non ci sia alcun barattolo di lenticchie.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Si hanno due urne. La prima contiene $ 4 $ palline bianche e $ 6 $ rosse, la seconda ne contiene $ 3 $ bianche e $ 5 $ rosse. Calcola la probabilità che, estraendo una pallina da ciascuna urna, esse siano:
+	\begin{enumerate}
+		\item entrambe bianche;
+		\item bianca dalla prima urna e rossa dalla seconda urna;
+		\item una bianca e una rossa.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}[Paradosso dei compleanni]
+	Calcolare la probabilità che in una classe di $ 40 $ persone almeno $ 2 $ siano nate nello stesso giorno.
+\end{exe}
+
+\section{Processo di Bernoulli}
+
+\begin{exe}
+	Un esame universitario consiste in un quiz a crocette con $ 10 $ domande a risposta multipla con $ 4 $ possibilità di risposta per ciascuna domanda e la risposta corretta è una sola. Si passa l'esame se in totale si compiono al massimo due errori. Qual è la probabilità di passare l'esame se si risponde a caso a tutte le domande?
+\end{exe}
+
+\begin{exe}
+	Per un corso di studi universitario con laurea triennale, la probabilità che uno studente
+	che si iscrive al primo anno si laurei effettivamente è $ p = 0.6 = \frac35 $. Qual è la probabilità che, su $ 10 $ studenti immatricolati,
+	\begin{enumerate}
+		\item  nessuno si laurei;
+		\item uno si laurei;
+		\item almeno uno si laurei;
+		\item tutti si laureino.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Ho un mazzo di $ 40 $ carte (da briscola) ed estraggo per $ 5 $ volte una carta rimettendo ogni
+	volta la carta estratta nel mazzo. Introdotta la variabile aleatoria “X = numero delle volte in cui esce un Re” e richiamato il concetto di distribuzione binomiale, calcolare
+	\begin{enumerate}
+		\item la probabilità $ P({X \le 1}) $, cioè che un Re esca al più una volta nelle estrazioni;
+		\item la probabilità che un Re esca almeno una volta;
+		\item la media (o valore atteso), la varianza e la deviazione standard (o scarto quadratico medio) per la variabile aleatoria $ X $.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Calcolare in modo esplicito la densità discreta della legge binomiale $ Bin(5, 0.15) $,
+\end{exe}
+
+\begin{exe}
+	Se lancio $ 2 $ dadi la probabilità di fare $ 12 $ é $ \frac{1}{36} $: dunque mi aspetto che in $ 36 $ lanci esca un $ 12 $. Qual é la probabilità che ciò accada? Qual é il minimo numero di lanci da fare affinché la probabilità di uscita di un $ 12 $ sia almeno $ 0.5 $?
+\end{exe}
+
+\section{Processo di Poisson}
+
+\begin{exe} Una folla di persone aspetta in fila indiana il taxi, alla stazione centrale. Sia $ X $ il numero di taxi che passa in un'ora e $ N $ il numero medio di texi che passano in un'ora ($ N $ è noto).
+	\begin{enumerate}
+		\item Sotto quali ipotesi sul fenomeno si può assumere che $ X $ sia una variabile aleatoria di Poisson?
+		\item Ci si mette d'ora in poi nelle ipotesi del punto precedente. Se $ N = 20 $, qual è la probabilità che nella prossima mezz'ora passino esattamente $ 5 $ taxi?
+		\item Nelle ipotesi precedenti qual è la probabilità che nella prossima mezz'ora passino non più di $ 5 $ taxi?
+		\item  Qual'è la probabilità che nella prossima mezz'ora passino almeno $ 7 $ taxi?
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Un apparecchio elettronico produce mediamente $ N $ impulsi al secondo. Sapendo che il numero di impulsi segue una legge di Poisson, stabilire la probabilità che in $ 1000 $ secondi si verifichino almeno $ 2500 $ impulsi;
+\end{exe}
+
+\section{Variabili aleatorie continue}
+
+\begin{exe}
+	Sia $ X $ una variabile aleatoria continua di densità:
+	\[ F_{X}(t) = ct(1-t)^2 \mathds{1}_{(0,1)}(t).\]
+	\begin{enumerate}
+		\item Determinare il valore della costante $ c $ in modo tale che $ f_{X}(t) $ risulti una densità.
+		\item Calcolare il valore atteso di $ X $.
+		\item Calcolare l'espressione analitica della funzione di ripartizione $ F_{X}(t) $.
+	\end{enumerate}
+\end{exe}
+
+\begin{exe}
+	Calcolare il valore atteso della variabile aleatoria $ X $ avente come funzione di ripartizione:
+	\[ F_{X}(t) = \begin{cases}
+			1- \frac{1}{(1+t)^2} & \text{per} \ t>0   \\
+			0                    & \text{per} \ t\le0 \\
+		\end{cases} \]
+\end{exe}
+
+\begin{exe}
+	Trovare il valore della costante $ k \in \R $ in modo che la funzione $ f : \R \to \R $ definita da:
+	\[ f(x) := \begin{cases}
+			0   & \mbox{per}\ x \le -2 \ \mbox{e}\ x \ge 1 \\
+			k   & \mbox{per}\ -2<x<0                       \\
+			1-x & \mbox{per}\ 0 \le x <1
+		\end{cases} \]
+	sia una densità di probabilità per la variabile aleatoria continua $ X $. Una volta trovato il valore di $ k $, determinare la funzione di distribuzione $ F(x) $ e calcolare la probabilità $ P(-1<X<2) $.
+\end{exe}
+
+\begin{exe}
+	Trovare il valore del numero reale $ a > 0 $ tale che la funzione $ f : \R \to \R $ definita da
+	\[ f(x) = \begin{cases}
+			0   & \mbox{per} \ x < -1 \ \mbox{e} \ x \ge a, \\
+			x^2 & \mbox{per} \ -1\le x \le 0,               \\
+			1   & \mbox{per} \ 0 < x < a                    \\
+		\end{cases} \]
+	sia una densità di probabilità per la variabile aleatoria continua $ X $.
+	\begin{enumerate}
+		\item Una volta trovato il valore di a, determinare la funzione di distribuzione $ F(x) $;
+		\item calcolare le probabilità $ P(X > 0)$ e $ P \left(-\frac{1}{2} \le X \le \frac{1}{2} \right)  $.
+	\end{enumerate}
+\end{exe}
+
+\section{Distribuzione normale (o gaussiana)}
+
+\begin{exe}
+	Sia $ X $ una variabile aleatoria normalmente distribuita con media $ 3.5 $ e varianza $ 0.5625 $.
+	Calcolare le probabilità:
+	\begin{enumerate}
+		\item $ P(X \le 5) $;
+		\item $ P(X \ge 1.25) $.
+	\end{enumerate}
+\end{exe}
+\begin{exe}
+	Sia $ X $ una variabile aleatoria distribuita normalmente.
+	\begin{enumerate}
+		\item  Se $ X $ ha media $ \mu = 2.3 $ e deviazione standard $ \sigma = 0.08 $, calcolare la probabilità
+		      \[ P(2.276 < X < 2.316). \]
+		\item  Se ora X è un'altra variabile aleatoria distribuita normalmente tale che $ P (X < 2.5) = 0.5 $ e $ P(X < 2.55) = 0.6915 $, quanto valgono i valori $ \mu $ e $ \sigma $ relativi a $ X $?
+	\end{enumerate}
+\end{exe}
+\begin{exe}
+	L'altezza di un gruppo di $ 100 $ studenti universitari è distribuita normalmente con media
+	$ \mu = 178\ cm $ e varianza $ \sigma^2 = 225\ cm^2 $. Qual è la probabilità che uno studente preso a caso fra questi $ 100 $ abbia statura.
+	\begin{enumerate}
+		\item  maggiore di $ 188\ cm $?
+		\item  minore di $ 165 \ cm $?
+		\item  compresa tra $ 173 $ e $ 183\ cm $?
+	\end{enumerate}
+\end{exe}
+\begin{exe}
+	Il punteggio ottenuto dagli studenti per una prova scritta di un esame universitario del
+	primo anno di un corso di Scienze Naturali può essere modellizzato come una variabile aleatoria distribuita	normalmente con media $ 22 $ e varianza $ 9 $. Qual è la probabilità
+	\begin{enumerate}
+		\item  che uno studente ottenga un voto superiore al $ 25 $?
+		\item che uno studente ottenga un voto compreso tra $ 21 $ e $ 24 $?
+		\item che uno studente ottenga un voto inferiore al $ 18 $?
+	\end{enumerate}
+\end{exe}
+
+
+\end{document}
