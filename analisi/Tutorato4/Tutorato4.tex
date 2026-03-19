@@ -1,0 +1,98 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Tutorato 4\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+
+\begin{document}
+\maketitle
+
+\section*{Semplici equazioni alle derivate parziali e forme differenziali}
+
+\subsection*{Semplici equazioni alle derivate parziali}
+
+\begin{exe}
+    Verificate che la funzione $f(x,y) = \alpha x + \beta y + \gamma$ è armonica per ogni $\alpha, \beta, \gamma \in \mathbb{R}$.
+\end{exe}
+
+\begin{exe}
+    Verificate che
+    \begin{itemize}
+        \item $e^{kx} \cos(ky)$ è armonica per ogni $k \in \mathbb{R}$;
+        \item $e^{kx} \cos(ky) + e^{hx} \sin(hy)$ è armonica per ogni $h, k \in \mathbb{R}$;
+        \item $\ln(\sqrt{x^2+y^2})$ è armonica su $\mathbb{R}^2 \setminus \{(0,0)\}$.
+    \end{itemize}
+\end{exe}
+
+\begin{exe}
+    Dimostrate il teorema enunciato nella teoria: se $f,g : A \subseteq \mathbb{R}^n \to \mathbb{R}$ sono armoniche, allora per ogni $\alpha, \beta \in \mathbb{R}$, $\alpha f + \beta g$ è armonica.
+\end{exe}
+
+\begin{exe}
+    Calcolate il laplaciano delle seguenti funzioni scritte in coordinate polari:
+    \begin{enumerate}
+        \item $g(\rho, \theta) = \rho \theta^2$;
+        \item $g(\rho, \theta) = \rho^2 \theta$;
+        \item $g(\rho, \theta) = \rho \sin(\theta)$;
+        \item $g(\rho, \theta) = \sin(\rho \theta)$;
+        \item $g(\rho, \theta) = e^\rho \cos(\rho)$;
+        \item $g(\rho, \theta) = f(\rho)$.
+    \end{enumerate}
+    Suggerimento: invece di esprimere le funzioni in coordinate cartesiane e calcolare il laplaciano, utilizzate la formula del laplaciano in coordinate polari vista a lezione.
+\end{exe}
+
+\subsection*{Forme differenziali}
+
+\begin{exe}
+    Scrivi una forma differenziale esatta e una non esatta prima in $\mathbb{R}^2$, poi in $\mathbb{R}^3$ e infine in $\mathbb{R}^4$.
+\end{exe}
+
+\begin{exe}
+    Determina se le seguenti forme differenziali sono esatte e, in caso affermativo, determinane un potenziale.
+    \begin{enumerate}
+        \item $yzw dx + xzw dy + xyw dz + xyz dw$ su $\mathbb{R}^4$;
+        \item $(\cos(a)b \cos(c) + c^2) da + \sin(a) \cos(c) db + (-\sin(a)b \sin(c) + 2ac) dc$ su $\mathbb{R}^3$;
+        \item $\cos(u) du + \sin(v) dv$ su $\mathbb{R}^2$;
+        \item $v \cos(uv) du + u \cos(uv) dv$;
+        \item $c |(a,b,c)| da + a |(a,b,c)| db + b |(a,b,c)| dc$;
+        \item $x |(x,y,z)| dx + y |(x,y,z)| dy + z |(x,y,z)| dz$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Considera la forma differenziale $|x| dx + |y| dy$ definita su $\mathbb{R}^2$.
+    \begin{enumerate}
+        \item Dimostra che la forma differenziale è esatta.
+        \item Determina qual è l'insieme più grande $D$ in cui ha senso chiedersi se la forma differenziale è chiusa.
+        \item Giustifica in base alla teoria e a quanto determinato al punto precedente che la restrizione della forma differenziale all'insieme $D$ è chiusa.
+    \end{itemize}
+\end{exe}
+
+\begin{exe}
+    Se $U$ è un potenziale del campo $F : \mathbb{R}^3 \to \mathbb{R}^3$ e se $V$ è un potenziale del campo $G : \mathbb{R}^3 \to \mathbb{R}^3$, determina
+    \begin{enumerate}
+        \item se $U+V$ è il potenziale di $F+G$;
+        \item determina quale campo ha come potenziale $U \cdot V$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Determina per quale valore di $k \in \mathbb{R}$ il campo $F(x,y,z) = (3x^2 y^2 z, 2x^3 y z^k, x^3 y^2)$ è conservativo, poi calcola il potenziale corrispondente.
+\end{exe}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Soluzioni Tutorato 2\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+\newtheorem*{sol}{Soluzione}
+
+\begin{document}
+\maketitle
+
+\begin{exe}
+    Insieme di definizione...
+\end{exe}
+\begin{sol}
+    a) $|y| \leq |x|$; b) $x^2 + y^2 < 1$; c) $|x| < 1$ e $x^2 + y^2 \leq 4$.
+\end{sol}
+
+\begin{exe}
+    Derivate parziali...
+\end{exe}
+\begin{sol}
+    a) $\frac{\partial f}{\partial x} = \frac{\frac{y}{x^2+y^2} \cdot (x^2+y^2) - \arctan(x/y) \cdot 2x}{(x^2+y^2)^2}$;
+    b) $\frac{\partial f}{\partial x} = \frac{-y \sin(xy)}{1 + \cos(xy)}$.
+\end{sol}
+
+\begin{exe}
+    Ortogonalità gradiente...
+\end{exe}
+\begin{sol}
+    $\nabla f(0,1) = (1, -4)$. $\mathbf{u} = (\sqrt{2}, \frac{1}{2\sqrt{2}})$.
+    $\nabla f(0,1) \cdot \mathbf{u} = \sqrt{2} - \frac{4}{2\sqrt{2}} = \sqrt{2} - \sqrt{2} = 0$.
+\end{sol}
+
+\begin{exe}
+    Derivata direzionale...
+\end{exe}
+\begin{sol}
+    a) $\nabla f(1/2, -\sqrt{3}/2) = (1, -\sqrt{3})$. $v = \frac{1}{\sqrt{3}}(\sqrt{2}, 1)$. $D_v f = \frac{\sqrt{2} - \sqrt{3}}{\sqrt{3}}$.
+\end{sol}
+
+\begin{exe}
+    Piano tangente...
+\end{exe}
+\begin{sol}
+    a) $z = 3 + 2(x-2) + (y-1) = 2x + y - 2$.
+\end{sol}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

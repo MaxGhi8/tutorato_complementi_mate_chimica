@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Tutorato 2\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+
+\begin{document}
+\maketitle
+
+\begin{exe}
+    Determinare e rappresentare graficamente l'insieme di definizione delle seguenti funzioni:
+    \begin{enumerate}
+        \item $a(x,y) = \sqrt{x^2 - y^2}$;
+        \item $b(x,y) = \log(1 - x^2 - y^2)$;
+        \item $c(x,y) = \frac{\sqrt{4 - x^2 - y^2}}{\sqrt{1 - |x|}}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Calcolare le derivate parziali prime delle funzioni:
+    \begin{enumerate}
+        \item $a(x,y) = \frac{\arctan(x/y)}{x^2 + y^2}$;
+        \item $b(x,y) = \log(1 + \cos(xy))$;
+        \item $c(x,y) = \sqrt{x^2 + 3y^2}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Sia $f(x,y) = \frac{2y + \sin x}{x^3 + y^3}$. Verificare l'ortogonalità dei vettori:
+    \[ \nabla f(0,1), \quad \mathbf{u} = \sqrt{2}\mathbf{i} + \frac{1}{2\sqrt{2}}\mathbf{j}. \]
+\end{exe}
+
+\begin{exe}
+    Calcolare la derivata direzionale:
+    \begin{enumerate}
+        \item di $x^2 \log(x^2+y^2)$ nel punto $(1/2, -\sqrt{3}/2)$ e nella direzione del vettore $\sqrt{2}\mathbf{i} + \mathbf{j}$;
+        \item di $2x - 3\sqrt{2x^2+y}$ nel punto $(0,3)$ e nella direzione del vettore $\mathbf{i} + \sqrt{3}\mathbf{j}$;
+        \item di $x^2 - xz + xy^2$ nel punto $(-1,2,0)$ e nella direzione del vettore $\mathbf{i} + \mathbf{k}$;
+        \item di $\sqrt{z + xy^2}$ nel punto $(2,2,1)$ e nella direzione del vettore $-2\mathbf{i} + \mathbf{j} + \mathbf{k}$.
+    \end{enumerate}
+    (Se il vettore dato non ha modulo unitario, va normalizzato).
+\end{exe}
+
+\begin{exe}
+    Qual è la direzione $\mathbf{v} = \cos \vartheta \mathbf{i} + \sin \vartheta \mathbf{j}$ in cui è massima la rapidità di variazione della funzione $f(x,y) = x^2 + \sqrt{3}y^2$ nel punto $(1,1)$?
+\end{exe}
+
+\begin{exe}
+    Sia $f(x,y) = 2x - 3\sqrt{2x^2+y}$. Individuare una direzione rispetto alla quale la derivata direzionale di $f$ nel punto $(0,3)$ vale $1/4$. È possibile sostituendo $1/4$ con $2\sqrt{2}$?
+\end{exe}
+
+\begin{exe}
+    Scrivere l'equazione del piano tangente al grafico delle seguenti funzioni:
+    \begin{enumerate}
+        \item $\sqrt{1+x^3y^2}$ nel punto $(2,1)$;
+        \item $\frac{\log(x^2+y)}{y^2-3x}$ nel punto $(2,-3)$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Determinare i punti dei grafici delle seguenti funzioni in cui il piano tangente è orizzontale:
+    \begin{enumerate}
+        \item $x^3 y^2 (6 - x - y)$;
+        \item $x^2 y e^{x+y}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Determinare i punti del grafico della funzione $1/(x^2+y^2)$ in cui il piano tangente è ortogonale alla retta di equazioni
+    \[ x = \frac{1}{2}t, \quad y = \frac{\sqrt{3}}{2}t, \quad z = \frac{1}{2}t. \]
+\end{exe}
+
+\begin{exe}
+    Verificare che le seguenti funzioni sono armoniche nel loro insieme naturale di definizione (cioè risolvono l'equazione $\Delta u(x,y) = 0$):
+    \begin{enumerate}
+        \item $\log(x^2+y^2)$;
+        \item $\arctan(y/x)$;
+        \item $\frac{x}{x^2+y^2}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

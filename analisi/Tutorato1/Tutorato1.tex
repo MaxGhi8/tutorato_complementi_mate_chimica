@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Tutorato 1\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+
+\begin{document}
+\maketitle
+
+\section*{Funzioni di più variabili reali}
+
+\subsection*{Prime proprietà delle funzioni di più variabili reali}
+
+\begin{exe}
+    Scrivi
+    \begin{enumerate}
+        \item una funzione $f: \mathbb{R}^2 \to \mathbb{R}$;
+        \item una funzione $g: \mathbb{R}^3 \to \mathbb{R}$;
+        \item una funzione $h: \mathbb{R}^2 \setminus \{(0,0)\} \to \mathbb{R}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Rappresenta le curve di livello delle funzioni
+    \begin{enumerate}
+        \item $f(x,y) = x^2 + y^2$;
+        \item $f(x,y) = 4x^2 + y^2$;
+        \item $f(x,y) = x^2 - y^2$;
+        \item $f(x,y) = \sqrt{x^2 + y^2}$;
+        \item $f(x,y) = \frac{1}{x^2 + y^2}$;
+        \item $f(x,y) = \frac{y}{x^2 - 1}$.
+    \end{enumerate}
+\end{exe}
+
+\subsection*{Coordinate polari nel piano}
+
+\begin{exe}
+    Rappresenta sul piano cartesiano i punti le cui coordinate polari sono $(1, \pi)$ (i.e. $\rho=1, \theta=\pi$), $(1, 1)$, $(2, 5/4 \pi)$.
+\end{exe}
+
+\begin{exe}[Importante]
+    Calcola il cambiamento di coordinate da cartesiane a polari rispetto al punto $(x_0, y_0)$.
+\end{exe}
+
+\subsection*{Limiti e continuità}
+
+\begin{exe}
+    Scrivi
+    \begin{enumerate}
+        \item una funzione $f: \mathbb{R}^2 \to \mathbb{R}$ non costante che soddisfi
+              \[ \lim_{(x,y) \to (0,0)} f(x,y) = 2; \]
+        \item una funzione $g: \mathbb{R}^3 \to \mathbb{R}$ non costante che soddisfi
+              \[ \lim_{(x,y,z) \to (1,1,1)} g(x,y,z) = -2. \]
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Determina se i seguenti limiti esistono e, in caso affermativo, calcolali:
+    \begin{enumerate}
+        \item $\lim_{(x,y) \to (0,0)} \frac{xy^2}{xy^2 + y^3}$;
+        \item $\lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2}$;
+        \item $\lim_{(x,y) \to (1,0)} e^{xy}$;
+        \item $\lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \sin(|x| + |y|)$;
+        \item $\lim_{(x,y) \to (0,0)} x e^{x^2 + y^2}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}[Difficile]
+    Spiega perché i seguenti limiti non esistono:
+    \begin{enumerate}
+        \item $\lim_{(x,y) \to (0,0)} \frac{x^9}{x^9 - y^9}$;
+        \item $\lim_{(x,y) \to (0,0)} \frac{x^3y}{-y^3 + 9x^{10}}$;
+        \item $\lim_{(x,y) \to (0,0)} e^{y/x}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Determina se i seguenti limiti esistono e, in caso affermativo, calcolali:
+    \begin{enumerate}
+        \item $\lim_{(x,y) \to (1,1)} \frac{x^3y - 7y^2x^2 + 5y^4}{x^4 - 8y^3x}$;
+        \item $\lim_{(x,y) \to (1,0)} \frac{x}{y^2}$;
+        \item $\lim_{(x,y) \to (0,0)} \frac{x+y}{x-y}$.
+    \end{enumerate}
+\end{exe}
+
+\subsection*{Derivate parziali e gradiente}
+
+\begin{exe}
+    Scrivi
+    \begin{enumerate}
+        \item una funzione $f: \mathbb{R}^2 \to \mathbb{R}$ non costante che abbia le derivate parziali nel punto $(1,1)$;
+        \item una funzione $g: \mathbb{R}^2 \to \mathbb{R}$ che non abbia la derivata parziale $\frac{\partial g}{\partial y}$ ma abbia $\frac{\partial g}{\partial x}$ nel punto $(0,0)$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Calcola il gradiente di $f(x,y) = \frac{xy}{x^2+y^2}$ in $(-1,1)$.
+\end{exe}
+
+\begin{exe}
+    Determina se esistono le derivate parziali (cioè $\frac{\partial f}{\partial x}$ e $\frac{\partial f}{\partial y}$) di $f(x,y) = \min\{x, y-1\}$ nei punti $(0,0); (2,4); (-2,-1); (1,1)$. Nei punti dove esistono, calcolale.
+\end{exe}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

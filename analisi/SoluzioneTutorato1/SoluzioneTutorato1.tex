@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Soluzione Tutorato 1\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+\newtheorem*{sol}{Soluzione}
+
+\begin{document}
+\maketitle
+
+\begin{exe}
+    Scrivi (1) una funzione $f: \mathbb{R}^2 \to \mathbb{R}$; (2) una funzione $g: \mathbb{R}^3 \to \mathbb{R}$; (3) una funzione $h: \mathbb{R}^2 \setminus \{(0,0)\} \to \mathbb{R}$.
+\end{exe}
+\begin{sol}
+    Per esempio $f(x,y) = x+y$, $g(x,y,z) = xyz$, $h(x,y) = \frac{x+y}{x^2+y^2}$.
+\end{sol}
+
+\begin{exe}
+    Rappresenta le curve di livello delle funzioni...
+\end{exe}
+\begin{sol}
+    (1) $f(x,y) = x^2+y^2=c \implies$ circonferenze centrate nell'origine.
+    (2) $f(x,y) = 4x^2+y^2=c \implies$ ellissi centrate nell'origine.
+    (3) $f(x,y) = x^2-y^2=c \implies$ iperboli.
+    (4) $f(x,y) = \sqrt{x^2+y^2}=c \implies$ circonferenze.
+    (5) $f(x,y) = \frac{1}{x^2+y^2}=c \implies$ circonferenze.
+    (6) $f(x,y) = \frac{y}{x^2-1}=c \implies y = c(x^2-1)$, parabole.
+\end{sol}
+
+\begin{exe}
+    Rappresenta sul piano cartesiano i punti...
+\end{exe}
+\begin{sol}
+    $(1, \pi) \to (-1, 0)$; $(1,1) \to (\cos 1, \sin 1)$; $(2, 5/4 \pi) \to (-\sqrt{2}, -\sqrt{2})$.
+\end{sol}
+
+\begin{exe}
+    Calcola il cambiamento di coordinate da cartesiane a polari rispetto al punto $(x_0, y_0)$.
+\end{exe}
+\begin{sol}
+    Il cambiamento di coordinate da cartesiane centrate in $(0,0)$ a polari è $x = \rho \cos \theta, y = \rho \sin \theta$. Invece il cambiamento di coordinate da cartesiane centrate in $(0,0)$ a cartesiane centrate in $(x_0, y_0)$ è $x = x_0 + X, y = y_0 + Y$. Per ottenere il cambiamento di coordinate da cartesiane a polari centrate in $(x_0, y_0)$, passiamo prima a coordinate cartesiane centrate in $(x_0, y_0)$ e poi da queste alle coordinate polari. Otteniamo $x = x_0 + \rho \cos \theta, y = y_0 + \rho \sin \theta$.
+\end{sol}
+
+\begin{exe}
+    Scrivi funzioni che soddisfano limiti...
+\end{exe}
+\begin{sol}
+    Per esempio $f(x,y) = x+y+2$, $g(x,y,z) = x+y+z-5$.
+\end{sol}
+
+\begin{exe}
+    Calcola i limiti...
+\end{exe}
+\begin{sol}
+    (1) non esiste; (2) non esiste; (3) $1$; (4) $0$; (5) $0$.
+\end{sol}
+
+\begin{exe}[Difficile]
+    Spiega perché i seguenti limiti non esistono...
+\end{exe}
+\begin{sol}
+    Perché i limiti lungo diverse direzioni sono diversi.
+\end{sol}
+
+\begin{exe}
+    Calcola i limiti...
+\end{exe}
+\begin{sol}
+    (1) $1/7$; (2) $+\infty$; (3) non esiste.
+\end{sol}
+
+\begin{exe}
+    Derivate parziali...
+\end{exe}
+\begin{sol}
+    Per esempio (1) $f(x,y) = \sin(x) \cos(y)$ e $g(x,y) = |y|$.
+\end{sol}
+
+\begin{exe}
+    Gradiente di $f(x,y) = \frac{xy}{x^2+y^2}$ in $(-1,1)$.
+\end{exe}
+\begin{sol}
+    $\nabla f(-1,1) = (1/2, 1/2)$.
+\end{sol}
+
+\begin{exe}
+    Derivate parziali di $f(x,y) = \min\{x, y-1\}$.
+\end{exe}
+\begin{sol}
+    $f(0,0)=0 = f(1,1)=0; (0,1); (2,4) \to (0,1); (1,1) \to$ non esiste.
+\end{sol}
+
+\end{document}

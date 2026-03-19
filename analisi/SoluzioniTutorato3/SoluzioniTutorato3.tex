@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Soluzioni Tutorato 3\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+\newtheorem*{sol}{Soluzione}
+
+\begin{document}
+\maketitle
+
+\begin{exe}
+    Determina l'insieme aperto $A \subseteq \mathbb{R}^3$ dove le funzioni sono di classe $C^1$.
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item $A = \mathbb{R}^3$;
+        \item $A = \{(x,y,z) \in \mathbb{R}^3 : z \neq k\pi, k \in \mathbb{Z}\}$;
+        \item $A = \{(x,y,z) \in \mathbb{R}^3 : x \neq 0\}$;
+        \item $A = \{(x,y,z) \in \mathbb{R}^3 : y \neq -z^2\}$.
+    \end{enumerate}
+\end{sol}
+
+\begin{exe}
+    Calcola $\frac{\partial f(0,0,1)}{\partial v}$ e $\frac{\partial f(0,0,0)}{\partial v}$ con $f(x,y,z) = \cos(xy)(z-1)^3$.
+\end{exe}
+\begin{sol}
+    $f$ è di classe $C^1$ su tutto $\mathbb{R}^3$, quindi possiamo applicare la formula del gradiente.
+    $\frac{\partial f}{\partial x} = -y \sin(xy)(z-1)^3$, $\frac{\partial f}{\partial y} = -x \sin(xy)(z-1)^3$, $\frac{\partial f}{\partial z} = 3 \cos(xy)(z-1)^2$.
+    $\nabla f(0,0,1) = (0,0,0)$, quindi $D_v f(0,0,1) = 0$ per ogni versore $v$.
+    $\nabla f(0,0,0) = (0,0,3)$, quindi $D_v f(0,0,0) = 3v_z$.
+\end{sol}
+
+\begin{exe}
+    Insieme aperto $A \subseteq \mathbb{R}^2$ dove le funzioni sono $C^2$.
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item $A = \mathbb{R}^2$;
+        \item $A = \{(x,y) \in \mathbb{R}^2 : x \neq 0 \wedge y \neq 0\}$;
+        \item $A = \{(x,y) \in \mathbb{R}^2 : x \neq 0\}$;
+        \item $A = \{(x,y) \in \mathbb{R}^2 : y \neq x^2+1\}$.
+    \end{enumerate}
+\end{sol}
+
+\begin{exe}
+    Esercizio su $f(x,y) = x \sqrt[3]{y}$ e $g_i$.
+\end{exe}
+\begin{sol}
+    Per $i=3$, $g_3(f(x,y)) = x^3 y$, che è polinomiale e quindi differenziabile ovunque.
+\end{sol}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

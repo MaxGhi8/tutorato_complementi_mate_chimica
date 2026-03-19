@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Tutorato 3\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+
+\begin{document}
+\maketitle
+
+\section*{Calcolo differenziale in più variabili reali}
+
+\begin{exe}
+    Determina il più grande insieme aperto $A \subseteq \mathbb{R}^3$ sul quale le seguenti funzioni sono di classe $C^1$.
+    \begin{enumerate}
+        \item $f(x,y,z) = zx^2 - xy^3 + z^4$;
+        \item $f(x,y,z) = \frac{\cos(xy)}{\sin(z)}$;
+        \item $f(x,y,z) = |x|y$;
+        \item $f(x,y,z) = \frac{x}{y+z^2}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Considera la funzione $f: \mathbb{R}^3 \to \mathbb{R}$ definita da $f(x,y,z) = \cos(xy)(z-1)^3$. Per ogni versore $v \in \mathbb{R}^3$, calcola $\frac{\partial f(0,0,1)}{\partial v}$ e $\frac{\partial f(0,0,0)}{\partial v}$.\\
+    \textbf{Suggerimento}: al posto di calcolare le derivate direzionali con la definizione (che si può comunque utilizzare senza alcun problema), giustifica che ci sono le ipotesi sufficienti per applicare la formula del gradiente. Poi calcola le derivate direzionali con la formula del gradiente.
+\end{exe}
+
+\begin{exe}
+    Determina il più grande insieme aperto $A \subseteq \mathbb{R}^2$ sul quale le seguenti funzioni sono di classe $C^2$.
+    \begin{enumerate}
+        \item $f(x,y) = \sin(xy)\cos(\pi - x^2 + y^2)$;
+        \item $f(x,y) = \sqrt[3]{x} \sqrt[3]{y}$;
+        \item $f(x,y) = |x|y$;
+        \item $f(x,y) = \frac{1}{x^2 - y + 1}$.
+    \end{enumerate}
+\end{exe}
+
+\begin{exe}
+    Sia $f: \mathbb{R}^2 \to \mathbb{R}$ la funzione $f(x,y) = x \sqrt[3]{y}$ e $g_i: \mathbb{R} \to \mathbb{R}$ le funzioni $g_i(t) = t^i$ per $i=2,3,4$. Per ciascuno di questi $i$ calcola, se esiste,
+    \begin{itemize}
+        \item $\nabla g_i(f(0,0))$ e $H_{g_i(f)}(0,0)$,
+        \item $\nabla g_i(f(1,8))$ e $H_{g_i(f)}(1,8)$,
+        \item $\nabla g_i(f(-3,0))$ e $H_{g_i(f)}(-3,0)$,
+        \item $\nabla g_i(f(0,-9))$ e $H_{g_i(f)}(0,-9)$.
+    \end{itemize}
+    Suggerimento: $g_3(f(x,y)) = (x \sqrt[3]{y})^3 = \dots$
+\end{exe}
+
+\begin{exe}
+    Dopo aver giustificato in base alla teoria che le funzioni seguenti
+    \begin{itemize}
+        \item sono differenziabili in ogni punto del loro dominio $D$ (suggerimento: mostrare che vale la condizione più forte $f \in C^1(D)$);
+        \item soddisfano le ipotesi del teorema di Schwarz;
+    \end{itemize}
+    calcolane il piano tangente, la matrice Hessiana e il polinomio di Taylor di ordine 2 centrato in $(0,0)$.
+    \begin{enumerate}
+        \item $f(x,y) = (x-1)(y-1)$;
+        \item $f(x,y) = (x-1)^3 (y-1)^3$;
+        \item $f(x,y) = (y^2 - 1) \sin x$;
+        \item $f(x,y) = e^{x+y+1}$;
+        \item $f(x,y) = \cos(x+y+\pi)$.
+    \end{enumerate}
+\end{exe}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}

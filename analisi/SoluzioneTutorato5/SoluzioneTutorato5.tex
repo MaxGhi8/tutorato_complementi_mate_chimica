@@ -1,0 +1,58 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+
+\title{Soluzione Tutorato 5\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
+\author{prof. Emanuele Bottazzi}
+\date{}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exe}{Esercizio}
+\newtheorem*{sol}{Soluzione}
+
+\begin{document}
+\maketitle
+
+\begin{exe}
+    Calcola integrali multipli.
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item $I_1 = \int_1^2 \frac{1}{x} dx \int_{-2}^{-1} y^2 dy = [\ln x]_1^2 [\frac{y^3}{3}]_{-2}^{-1} = \ln(2) \frac{7}{3}$.
+        \item $I_2 = e - 3/2$.
+        \item $I_3 = 2^4 = 16$.
+    \end{enumerate}
+\end{sol}
+
+\begin{exe}
+    Definisci insieme $y$-semplice...
+\end{exe}
+\begin{sol}
+    $E = \{(x,y) \in \mathbb{R}^2 : y \in [0,1], y \leq x \leq -y+2 \}$.
+\end{sol}
+
+\begin{exe}
+    Calcola integrali doppi.
+\end{exe}
+\begin{sol}
+    (1) $1/12$; (2) $-2/3$.
+\end{sol}
+
+\begin{exe}
+    Calcola $\iint_{A \cup B} 5f(x,y) \, dx dy$.
+\end{exe}
+\begin{sol}
+    $\iint_{A \cup B} 5f = 5 \left( \iint_A f + \iint_B f \right) = 5(1 - 1) = 0$.
+\end{sol}
+
+\begin{center}
+    prof. Emanuele Bottazzi\\
+    emanuele.bottazzi@unipv.it
+\end{center}
+
+\end{document}
