@@ -6,98 +6,108 @@
 \usepackage{amssymb}
 \usepackage[italian]{babel}
 
-\title{Soluzione Tutorato 1\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
-\author{prof. Emanuele Bottazzi}
+\title{Soluzione Tutorato 1 - Analisi \\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2025/2026}
+\author{Massimiliano Ghiotto - massimiliano.ghiotto01@universitadipavia.it}
 \date{}
 
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{exe}{Esercizio}
-\newtheorem*{sol}{Soluzione}
+\newtheorem{sol}{Soluzione}
 
 \begin{document}
 \maketitle
 
-\begin{exe}
-    Scrivi (1) una funzione $f: \mathbb{R}^2 \to \mathbb{R}$; (2) una funzione $g: \mathbb{R}^3 \to \mathbb{R}$; (3) una funzione $h: \mathbb{R}^2 \setminus \{(0,0)\} \to \mathbb{R}$.
-\end{exe}
 \begin{sol}
     Per esempio $f(x,y) = x+y$, $g(x,y,z) = xyz$, $h(x,y) = \frac{x+y}{x^2+y^2}$.
 \end{sol}
 
-\begin{exe}
-    Rappresenta le curve di livello delle funzioni...
-\end{exe}
 \begin{sol}
-    (1) $f(x,y) = x^2+y^2=c \implies$ circonferenze centrate nell'origine.
-    (2) $f(x,y) = 4x^2+y^2=c \implies$ ellissi centrate nell'origine.
-    (3) $f(x,y) = x^2-y^2=c \implies$ iperboli.
-    (4) $f(x,y) = \sqrt{x^2+y^2}=c \implies$ circonferenze.
-    (5) $f(x,y) = \frac{1}{x^2+y^2}=c \implies$ circonferenze.
-    (6) $f(x,y) = \frac{y}{x^2-1}=c \implies y = c(x^2-1)$, parabole.
+    \begin{enumerate}
+        \item $f(x,y) = x^2+y^2=c \implies$ circonferenze centrate nell'origine.
+        \item $f(x,y) = 4x^2+y^2=c \implies$ ellissi centrate nell'origine.
+        \item $f(x,y) = x^2-y^2=c \implies$ iperboli.
+        \item $f(x,y) = \sqrt{x^2+y^2}=c \implies$ circonferenze.
+        \item $f(x,y) = \frac{1}{x^2+y^2}=c \implies$ circonferenze.
+        \item $f(x,y) = \frac{y}{x^2-1}=c \implies y = c(x^2-1)$, parabole.
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Rappresenta sul piano cartesiano i punti...
-\end{exe}
 \begin{sol}
     $(1, \pi) \to (-1, 0)$; $(1,1) \to (\cos 1, \sin 1)$; $(2, 5/4 \pi) \to (-\sqrt{2}, -\sqrt{2})$.
 \end{sol}
 
-\begin{exe}
-    Calcola il cambiamento di coordinate da cartesiane a polari rispetto al punto $(x_0, y_0)$.
-\end{exe}
 \begin{sol}
-    Il cambiamento di coordinate da cartesiane centrate in $(0,0)$ a polari è $x = \rho \cos \theta, y = \rho \sin \theta$. Invece il cambiamento di coordinate da cartesiane centrate in $(0,0)$ a cartesiane centrate in $(x_0, y_0)$ è $x = x_0 + X, y = y_0 + Y$. Per ottenere il cambiamento di coordinate da cartesiane a polari centrate in $(x_0, y_0)$, passiamo prima a coordinate cartesiane centrate in $(x_0, y_0)$ e poi da queste alle coordinate polari. Otteniamo $x = x_0 + \rho \cos \theta, y = y_0 + \rho \sin \theta$.
+    Il cambiamento di coordinate da cartesiane centrate in $(0,0)$ a polari è
+    \[\begin{cases}
+            x & = \rho \cos \theta, \\ y & = \rho \sin \theta.
+        \end{cases}\]
+    Per ottenere il cambiamento di coordinate da cartesiane a polari centrate in $(x_0, y_0)$ utilizziamo
+    \[\begin{cases}
+            x & = x_0 + \rho \cos \theta, \\ y & = y_0 + \rho \sin \theta.
+        \end{cases}\]
 \end{sol}
 
-\begin{exe}
-    Scrivi funzioni che soddisfano limiti...
-\end{exe}
 \begin{sol}
     Per esempio $f(x,y) = x+y+2$, $g(x,y,z) = x+y+z-5$.
 \end{sol}
 
-\begin{exe}
-    Calcola i limiti...
-\end{exe}
 \begin{sol}
-    (1) non esiste; (2) non esiste; (3) $1$; (4) $0$; (5) $0$.
+    \begin{enumerate}
+        \item Valutiamo il limite lungo la famiglia di rette passanti per l'origine $y = mx$. Sostituendo si ottiene
+              \[ \lim_{x \to 0} \frac{x(mx)^2}{x(mx)^2 + (mx)^3} = \lim_{x \to 0} \frac{m^2 x^3}{x^3(m^2 + m^3)} = \frac{m^2}{m^2+m^3} = \frac{1}{1+m} \, \text{ (per } m \ne 0, m \ne -1). \]
+              Poiché il risultato dipende dalla direzione scelta (ovvero dipende dalla pendenza $m$), il limite originario \textbf{non esiste}.
+        \item Valutiamo il limite passando alle coordinate polari $x = \rho \cos \theta, \, y = \rho \sin \theta$. Poiché per $(x,y) \to (0,0)$ si ha $\rho \to 0^+$, otteniamo
+              \[ \lim_{\rho \to 0^+} \frac{(\rho \cos \theta)^2 (\rho \sin \theta)}{\rho^2} = \lim_{\rho \to 0^+} \frac{\rho^3 \cos^2 \theta \sin \theta}{\rho^2} = \lim_{\rho \to 0^+} \rho \cos^2 \theta \sin \theta. \]
+              Poiché le funzioni goniometriche sono limitate, si ha $|\cos^2 \theta \sin \theta| \le 1$. Pertanto vale la maggiorazione
+              \[ 0 \le |\rho \cos^2 \theta \sin \theta| \le \rho, \]
+              e per il Teorema dei due carabinieri (o del confronto), poiché $\rho \to 0^+$, concludiamo che il limite esiste e fa \textbf{$0$}.
+        \item Trattandosi del limite di una funzione continua (la funzione esponenziale composta con un polinomio), possiamo procedere per via diretta sostituendo le coordinate $(x,y) = (1,0)$:
+              \[ \lim_{(x,y) \to (1,0)} e^{xy} = e^{1 \cdot 0} = e^0 = \mathbf{1}. \]
+        \item Il limite può essere visto come il prodotto di due termini: $\frac{xy}{x^2+y^2}$ e $\sin(|x|+|y|)$. Osserviamo che passando in coordinate polari (oppure applicando la disuguaglianza $2|xy| \le x^2+y^2$) il primo termine è una quantità limitata:
+              \[ \left| \frac{xy}{x^2+y^2} \right| \le \frac{1}{2}. \]
+              Il secondo termine è invece un infinitesimo, in quanto per $(x,y) \to (0,0)$ si ha $\sin(|x|+|y|) \to \sin(0) = 0$. Essendo il limite il prodotto di una funzione limitata per una infinitesima, il suo risultato è chiaramente \textbf{$0$}.
+        \item Come nel caso (3), la funzione $f(x,y) = x e^{x^2+y^2}$ è ovunque continua. Calcoliamo il limite per sostituzione diretta di $(0,0)$:
+              \[ \lim_{(x,y) \to (0,0)} x e^{x^2+y^2} = 0 \cdot e^{0^2+0^2} = 0 \cdot 1 = \mathbf{0}. \]
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}[Difficile]
-    Spiega perché i seguenti limiti non esistono...
-\end{exe}
 \begin{sol}
-    Perché i limiti lungo diverse direzioni sono diversi.
+    I seguenti limiti non esistono poiché si ottengono valori diversi avvicinandosi all'origine lungo cammini differenti. Vediamolo nel dettaglio:
+    \begin{enumerate}
+        \item Valutando il limite lungo l'asse $x$ (con $y=0$), si ha
+              \[ \lim_{x \to 0} \frac{x^9}{x^9 - 0^9} = \lim_{x \to 0} 1 = 1. \]
+              Se invece ci avviciniamo all'origine lungo la retta $y=2x$, si ottiene
+              \[ \lim_{x \to 0} \frac{x^9}{x^9 - (2x)^9} = \lim_{x \to 0} \frac{x^9}{x^9 - 512x^9} = \lim_{x \to 0} \frac{1}{1 - 512} = -\frac{1}{511}. \]
+              Poiché si trovano risultati diversi seguendo direzioni diverse, il limite \textbf{non esiste}.
+        \item Avvicinandosi lungo l'asse $y$ (con $x=0$), si ha
+              \[ \lim_{y \to 0} \frac{0^3 \cdot y}{-y^3 + 9 \cdot 0^{10}} = \lim_{y \to 0} 0 = 0. \]
+              Restringendo invece la funzione lungo il cammino parametrizzato dalla curva $y=cx^{3/2}$ (per $x \to 0^+$), otteniamo
+              \[ \lim_{x \to 0^+} \frac{x^3(cx^{3/2})}{-(cx^{3/2})^3 + 9x^{10}} = \lim_{x \to 0^+} \frac{c x^{9/2}}{-c^3 x^{9/2} + 9x^{10}} = \lim_{x \to 0^+} \frac{c}{-c^3 + 9x^{11/2}} = -\frac{1}{c^2}. \]
+              Al variare del parametro $c$, il limite scalare assume valori differenti (dipendenti dalla traiettoria scelta), pertanto anche in questo caso il limite \textbf{non esiste}.
+        \item Considerando l'avvicinamento all'origine lungo la generica famiglia di rette $y = mx$, si ha per via di sostituzione
+              \[ \lim_{x \to 0} e^{\frac{mx}{x}} = \lim_{x \to 0} e^m = e^m. \]
+              Dimostrato che il risultato è legato alla pendenza $m$ della particolare retta percorsa, ne consegue che il limite \textbf{non esiste}.
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Calcola i limiti...
-\end{exe}
 \begin{sol}
-    (1) $1/7$; (2) $+\infty$; (3) non esiste.
-\end{sol}
-
-\begin{exe}
-    Derivate parziali...
-\end{exe}
-\begin{sol}
-    Per esempio (1) $f(x,y) = \sin(x) \cos(y)$ e $g(x,y) = |y|$.
-\end{sol}
-
-\begin{exe}
-    Gradiente di $f(x,y) = \frac{xy}{x^2+y^2}$ in $(-1,1)$.
-\end{exe}
-\begin{sol}
-    $\nabla f(-1,1) = (1/2, 1/2)$.
-\end{sol}
-
-\begin{exe}
-    Derivate parziali di $f(x,y) = \min\{x, y-1\}$.
-\end{exe}
-\begin{sol}
-    $f(0,0)=0 = f(1,1)=0; (0,1); (2,4) \to (0,1); (1,1) \to$ non esiste.
+    \begin{enumerate}
+        \item È lecito valutare separatamente il numeratore e il denominatore nel punto $(1,1)$:
+              \begin{align*}
+                  \text{Numeratore: }   & 1^3(1) - 7(1)^2(1)^2 + 5(1)^4 = 1 - 7 + 5 = -1; \\
+                  \text{Denominatore: } & 1^4 - 8(1)^3(1) = 1 - 8 = -7.
+              \end{align*}
+              Essendo il denominatore non nullo in un intorno del punto, la funzione razionale descritta risulta essere continua in $(1,1)$. Pertanto il limite esiste e vi si perviene banalmente per sostituzione diretta:
+              \[ \lim_{(x,y) \to (1,1)} \frac{x^3y - 7y^2x^2 + 5y^4}{x^4 - 8y^3x} = \frac{-1}{-7} = \mathbf{\frac{1}{7}}. \]
+        \item Al tendere di $(x,y) \to (1,0)$, il numeratore tende a $1$ pur rimanendo una quantità finita, mentre il denominatore tende a $0$ assumendo localmente sempre e solo valori strettamente positivi, avendo imposto $y \ne 0$ nel dominio ed essendo presente una potenza quadratica ($y^2 > 0$). Ci troviamo di conseguenza in una forma limite del tipo $\left[ \frac{1}{0^+} \right]$, per cui si può dedurre la non convergenza a un valore finito:
+              \[ \lim_{(x,y) \to (1,0)} \frac{x}{y^2} = \boldsymbol{+\infty}. \]
+        \item Verifichiamo se il limite dipende dalla direzione da cui si perviene all'origine. Ponendo $y=0$ risulta
+              \[ \lim_{x \to 0} \frac{x+0}{x-0} = \lim_{x \to 0} 1 = 1. \]
+              Ponendo invece $x=0$, si ottiene l'approccio ortogonale
+              \[ \lim_{y \to 0} \frac{0+y}{0-y} = \lim_{y \to 0} (-1) = -1. \]
+              Avendo testato l'indispensabile condizione di unicità e avendo i due limiti restituito esiti discostanti, ne inferiamo per via logica che il limite dato \textbf{non esiste}.
+    \end{enumerate}
 \end{sol}
 
 \end{document}
