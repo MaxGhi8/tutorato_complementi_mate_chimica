@@ -104,10 +104,31 @@
     \end{enumerate}
 \end{sol}
 
-\begin{sol}[Taylor Es. 11.4]
-    $f(x,y) = e^{x+y+1}$ in $(0,0)$. $f(0,0)=e$.
-    $\nabla f(0,0) = (e, e)$. $H_f(0,0) = \begin{pmatrix} e & e \\ e & e \end{pmatrix}$.
-    $T_2(x,y) = e + ex + ey + \frac{e}{2}(x^2 + 2xy + y^2)$.
+\begin{sol}[Polinomio di Taylor]
+    Tutte le funzioni proposte sono composizioni di funzioni elementari ($C^\infty$) nei rispettivi domini, pertanto sono differenziabili ($\in C^1$) e soddisfano il teorema di Schwarz ($\in C^2$).
+    Calcoliamo piano tangente ($P.T.$), matrice Hessiana ($H_f$) e polinomio di Taylor di ordine 2 ($T_2$) in $(0,0)$.
+
+    \begin{enumerate}
+        \item $f(x,y) = (x-1)(y-1)$:
+              $f(0,0) = 1, \nabla f(0,0) = (-1, -1), H_f(0,0) = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+              $P.T.: z = 1-x-y$; $T_2(x,y) = 1-x-y+xy$.
+
+        \item $f(x,y) = (x-1)^3(y-1)^3$:
+              $f(0,0) = 1, \nabla f(0,0) = (-3, -3), H_f(0,0) = \begin{pmatrix} 6 & 9 \\ 9 & 6 \end{pmatrix}$.
+              $P.T.: z = 1-3x-3y$; $T_2(x,y) = 1-3x-3y+3x^2+9xy+3y^2$.
+
+        \item $f(x,y) = (y^2-1) \sin x$:
+              $f(0,0) = 0, \nabla f(0,0) = (-1, 0), H_f(0,0) = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$.
+              $P.T.: z = -x$; $T_2(x,y) = -x$.
+
+        \item $f(x,y) = e^{x+y+1}$:
+              $f(0,0) = e, \nabla f(0,0) = (e, e), H_f(0,0) = \begin{pmatrix} e & e \\ e & e \end{pmatrix}$.
+              $P.T.: z = e+ex+ey$; $T_2(x,y) = e+ex+ey+\frac{e}{2}x^2+exy+\frac{e}{2}y^2$.
+
+        \item $f(x,y) = \cos(x+y+\pi) = -\cos(x+y)$:
+              $f(0,0) = -1, \nabla f(0,0) = (0, 0), H_f(0,0) = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$.
+              $P.T.: z = -1$; $T_2(x,y) = -1+\frac{1}{2}x^2+xy+\frac{1}{2}y^2$.
+    \end{enumerate}
 \end{sol}
 
 \end{document}
