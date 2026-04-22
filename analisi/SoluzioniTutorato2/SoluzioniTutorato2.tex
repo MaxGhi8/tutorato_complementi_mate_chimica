@@ -5,59 +5,109 @@
 \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \usepackage{amssymb}
 \usepackage[italian]{babel}
+\usepackage{amsthm}
+\usepackage{bm}
 
-\title{Soluzioni Tutorato 2\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
-\author{prof. Emanuele Bottazzi}
+\title{Soluzioni Tutorato 2 - Analisi\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2025/2026}
+\author{Massimiliano Ghiotto}
 \date{}
 
-\usepackage{amsthm}
 \theoremstyle{definition}
-\newtheorem{exe}{Esercizio}
-\newtheorem*{sol}{Soluzione}
+\newtheorem{sol}{Soluzione}
 
 \begin{document}
 \maketitle
 
-\begin{exe}
-    Insieme di definizione...
-\end{exe}
-\begin{sol}
-    a) $|y| \leq |x|$; b) $x^2 + y^2 < 1$; c) $|x| < 1$ e $x^2 + y^2 \leq 4$.
+\begin{sol}[Insiemi di definizione]
+    \begin{enumerate}
+        \item $a(x,y) = \sqrt{x^2 - y^2}$. Condizione: $x^2 - y^2 \geq 0 \iff |x| \geq |y|$. La regione comprende le zone del piano in cui la distanza dall'asse $y$ è maggiore o uguale a quella dall'asse $x$ (le "clessidre" orizzontali).
+        \item $b(x,y) = \log(1 - x^2 - y^2)$. Condizione: $x^2 + y^2 < 1$. Interno del cerchio unitario.
+        \item $c(x,y) = \frac{\sqrt{4 - x^2 - y^2}}{\sqrt{1 - |x|}}$. Condizioni: $x^2 + y^2 \leq 4$ (disco di raggio 2) e $1 - |x| > 0 \implies -1 < x < 1$ (striscia verticale).
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Derivate parziali...
-\end{exe}
-\begin{sol}
-    a) $\frac{\partial f}{\partial x} = \frac{\frac{y}{x^2+y^2} \cdot (x^2+y^2) - \arctan(x/y) \cdot 2x}{(x^2+y^2)^2}$;
-    b) $\frac{\partial f}{\partial x} = \frac{-y \sin(xy)}{1 + \cos(xy)}$.
+\begin{sol}[Derivate parziali]
+    \begin{enumerate}
+        \item $a(x,y) = \frac{\arctan(x/y)}{x^2 + y^2}$:
+              \[ a_x = \frac{y - 2x \arctan(x/y)}{(x^2+y^2)^2}, \quad a_y = \frac{-x - 2y \arctan(x/y)}{(x^2+y^2)^2} \]
+        \item $b(x,y) = \log(1 + \cos(xy))$:
+              \[ b_x = \frac{-y \sin(xy)}{1 + \cos(xy)}, \quad b_y = \frac{-x \sin(xy)}{1 + \cos(xy)} \]
+        \item $c(x,y) = \sqrt{x^2 + 3y^2}$:
+              \[ c_x = \frac{x}{\sqrt{x^2+3y^2}}, \quad c_y = \frac{3y}{\sqrt{x^2+3y^2}} \]
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Ortogonalità gradiente...
-\end{exe}
-\begin{sol}
-    $\nabla f(0,1) = (1, -4)$. $\mathbf{u} = (\sqrt{2}, \frac{1}{2\sqrt{2}})$.
-    $\nabla f(0,1) \cdot \mathbf{u} = \sqrt{2} - \frac{4}{2\sqrt{2}} = \sqrt{2} - \sqrt{2} = 0$.
+\begin{sol}[Ortogonalità]
+    $\nabla f(0,1) = (1, -4)$ e $\mathbf{u} = (\sqrt{2}, \frac{1}{2\sqrt{2}})$.
+    Il prodotto scalare $\nabla f \cdot \mathbf{u} = \sqrt{2} - \frac{4}{2\sqrt{2}} = \sqrt{2} - \sqrt{2} = 0$ conferma l'ortogonalità.
 \end{sol}
 
-\begin{exe}
-    Derivata direzionale...
-\end{exe}
-\begin{sol}
-    a) $\nabla f(1/2, -\sqrt{3}/2) = (1, -\sqrt{3})$. $v = \frac{1}{\sqrt{3}}(\sqrt{2}, 1)$. $D_v f = \frac{\sqrt{2} - \sqrt{3}}{\sqrt{3}}$.
+\begin{sol}[Derivate direzionali]
+    \begin{enumerate}
+        \item $f(x,y) = x^2 \log(x^2+y^2)$ in $(1/2, -\sqrt{3}/2)$, $\mathbf{v} = (\sqrt{2}, 1)$.
+              $\nabla f(P) = (1/4, -\sqrt{3}/4)$, versore $\hat{\mathbf{v}} = (\sqrt{2/3}, 1/\sqrt{3})$.
+              $D_{\mathbf{v}} f = \frac{\sqrt{2}-\sqrt{3}}{4\sqrt{3}}$.
+        \item $f(x,y) = 2x - 3\sqrt{2x^2+y}$ in $(0,3)$, $\mathbf{v} = (1, \sqrt{3})$.
+              $\nabla f(0,3) = (2, -\sqrt{3}/2)$, versore $\hat{\mathbf{v}} = (1/2, \sqrt{3}/2) \implies D_{\mathbf{v}} f = 1/4$.
+        \item $f(x,y,z) = x^2 - xz + xy^2$ in $(-1,2,0)$, $\mathbf{v} = (1, 0, 1)$.
+              $\nabla f = (2x-z+y^2, 2xy, -x) \implies \nabla f(-1,2,0) = (2, -4, 1)$.
+              Versore $\hat{\mathbf{v}} = (1/\sqrt{2}, 0, 1/\sqrt{2}) \implies D_{\mathbf{v}} f = \frac{2+1}{\sqrt{2}} = \frac{3}{\sqrt{2}}$.
+        \item $f(x,y,z) = \sqrt{z + xy^2}$ in $(2,2,1)$, $\mathbf{v} = (-2, 1, 1)$.
+              $\nabla f = \frac{1}{2\sqrt{z+xy^2}}(y^2, 2xy, 1) \implies \nabla f(2,2,1) = \frac{1}{6}(4, 8, 1)$.
+              Versore $\hat{\mathbf{v}} = \frac{1}{\sqrt{6}}(-2, 1, 1) \implies D_{\mathbf{v}} f = \frac{-8+8+1}{6\sqrt{6}} = \frac{1}{6\sqrt{6}}$.
+    \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Piano tangente...
-\end{exe}
-\begin{sol}
-    a) $z = 3 + 2(x-2) + (y-1) = 2x + y - 2$.
+\begin{sol}[Massima rapidità]
+    $\nabla f(1,1) = (2, 2\sqrt{3})$. La direzione di massima crescita è $\hat{\mathbf{v}} = (1/2, \sqrt{3}/2)$, corrispondente a $\vartheta = \pi/3$.
 \end{sol}
 
-\begin{center}
-    prof. Emanuele Bottazzi\\
-    emanuele.bottazzi@unipv.it
-\end{center}
+\begin{sol}[Esercizio 6]
+    $\nabla f(0,3) = (2, -\sqrt{3}/2)$. Cerchiamo $\hat{\mathbf{v}} = (\cos \vartheta, \sin \vartheta)$ tale che $2\cos \vartheta - \frac{\sqrt{3}}{2}\sin \vartheta = 1/4$.
+    Una soluzione è data da $\vartheta = \pi/3$. Geometricamente esistono due direzioni simmetriche rispetto al gradiente.
+    Non è possibile per $2\sqrt{2}$ poiché $|\nabla f(0,3)| = \sqrt{4 + 3/4} = \sqrt{19}/2 \approx 2.18 < 2\sqrt{2} \approx 2.82$.
+\end{sol}
+
+\begin{sol}[Piani tangenti]
+    \begin{enumerate}
+        \item $f(x,y) = \sqrt{1+x^3y^2}$ in $(2,1) \implies z = 2x + \frac{8}{3}y - \frac{11}{3}$.
+        \item $f(x,y) = \frac{\log(x^2+y)}{y^2-3x}$ in $(2,-3)$. $f(2,-3) = \frac{\log(1)}{9-6} = 0$.
+              $f_x = \frac{\frac{2x}{x^2+y}(y^2-3x) - \log(x^2+y)(-3)}{(y^2-3x)^2} \implies f_x(2,-3) = \frac{4(3)-0}{9} = 4/3$.
+              $f_y = \frac{\frac{1}{x^2+y}(y^2-3x) - \log(x^2+y)(2y)}{(y^2-3x)^2} \implies f_y(2,-3) = \frac{1(3)-0}{9} = 1/3$.
+              Piano: $z = \frac{4}{3}(x-2) + \frac{1}{3}(y+3) \implies z = \frac{4}{3}x + \frac{1}{3}y - \frac{5}{3}$.
+    \end{enumerate}
+\end{sol}
+
+\begin{sol}[Punti critici]
+    \begin{enumerate}
+        \item $f(x,y) = x^3 y^2 (6 - x - y) \implies (3,2)$ (e i punti sugli assi).
+        \item $f(x,y) = x^2 y e^{x+y}$. $\nabla f = (xy(x+2)e^{x+y}, x^2(y+1)e^{x+y}) = (0,0)$.
+              Punto: $(-2, -1)$ (e i punti sull'asse $y$, dove $x=0$).
+    \end{enumerate}
+\end{sol}
+
+\begin{sol}[Esercizio 9]
+    La retta ha direzione $\mathbf{r} = (1/2, \sqrt{3}/2, 1/2)$. Il piano tangente a $f(x,y) = (x^2+y^2)^{-1}$ ha normale $\mathbf{n} = (f_x, f_y, -1)$.
+    $f_x = \frac{-2x}{(x^2+y^2)^2}, f_y = \frac{-2y}{(x^2+y^2)^2}$.
+    Vogliamo $\mathbf{n} \parallel \mathbf{r}$, cioè $(f_x, f_y, -1) = \lambda (1/2, \sqrt{3}/2, 1/2)$.
+    Dall'ultima componente: $-1 = \lambda/2 \implies \lambda = -2$.
+    Quindi $f_x = -1$ e $f_y = -\sqrt{3}$. Dividendo le due equazioni: $y/x = \sqrt{3} \implies y = \sqrt{3}x$.
+    Sostituendo in $f_x$: $\frac{-2x}{(4x^2)^2} = -1 \implies \frac{1}{8x^3} = 1 \implies x = 1/2$.
+    Punto: $(1/2, \sqrt{3}/2)$.
+\end{sol}
+
+\begin{sol}[Armoniche]
+    \begin{enumerate}
+        \item $\log(x^2+y^2)$: $\Delta u = \frac{2(y^2-x^2)}{(x^2+y^2)^2} + \frac{2(x^2-y^2)}{(x^2+y^2)^2} = 0$.
+        \item $\arctan(y/x)$: $u_x = \frac{-y}{x^2+y^2}, u_{xx} = \frac{2xy}{(x^2+y^2)^2}$; $u_y = \frac{x}{x^2+y^2}, u_{yy} = \frac{-2xy}{(x^2+y^2)^2} \implies \Delta u = 0$.
+        \item $\frac{x}{x^2+y^2}$: Simile ai precedenti, deriva da $u_x$ del logaritmo (che è armonica).
+    \end{enumerate}
+\end{sol}
+
+\begin{sol}[Taylor Es. 11.4]
+    $f(x,y) = e^{x+y+1}$ in $(0,0)$. $f(0,0)=e$.
+    $\nabla f(0,0) = (e, e)$. $H_f(0,0) = \begin{pmatrix} e & e \\ e & e \end{pmatrix}$.
+    $T_2(x,y) = e + ex + ey + \frac{e}{2}(x^2 + 2xy + y^2)$.
+\end{sol}
 
 \end{document}
