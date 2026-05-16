@@ -5,9 +5,10 @@
 \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \usepackage{amssymb}
 \usepackage[italian]{babel}
+\usepackage{graphicx}
 
-\title{Tutorato 4\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
-\author{prof. Emanuele Bottazzi}
+\title{Tutorato 4 - Analisi\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2025/2026}
+\author{Massimiliano Ghiotto - massimiliano.ghiotto01@universitadipavia.it}
 \date{}
 
 \usepackage{amsthm}
@@ -17,77 +18,48 @@
 \begin{document}
 \maketitle
 
-\section*{Semplici equazioni alle derivate parziali e forme differenziali}
-
-\subsection*{Semplici equazioni alle derivate parziali}
+\section*{Integrali multipli}
 
 \begin{exe}
-    Verificate che la funzione $f(x,y) = \alpha x + \beta y + \gamma$ è armonica per ogni $\alpha, \beta, \gamma \in \mathbb{R}$.
-\end{exe}
-
-\begin{exe}
-    Verificate che
-    \begin{itemize}
-        \item $e^{kx} \cos(ky)$ è armonica per ogni $k \in \mathbb{R}$;
-        \item $e^{kx} \cos(ky) + e^{hx} \sin(hy)$ è armonica per ogni $h, k \in \mathbb{R}$;
-        \item $\ln(\sqrt{x^2+y^2})$ è armonica su $\mathbb{R}^2 \setminus \{(0,0)\}$.
-    \end{itemize}
-\end{exe}
-
-\begin{exe}
-    Dimostrate il teorema enunciato nella teoria: se $f,g : A \subseteq \mathbb{R}^n \to \mathbb{R}$ sono armoniche, allora per ogni $\alpha, \beta \in \mathbb{R}$, $\alpha f + \beta g$ è armonica.
-\end{exe}
-
-\begin{exe}
-    Calcolate il laplaciano delle seguenti funzioni scritte in coordinate polari:
+    Calcola i seguenti integrali multipli.
     \begin{enumerate}
-        \item $g(\rho, \theta) = \rho \theta^2$;
-        \item $g(\rho, \theta) = \rho^2 \theta$;
-        \item $g(\rho, \theta) = \rho \sin(\theta)$;
-        \item $g(\rho, \theta) = \sin(\rho \theta)$;
-        \item $g(\rho, \theta) = e^\rho \cos(\rho)$;
-        \item $g(\rho, \theta) = f(\rho)$.
-    \end{enumerate}
-    Suggerimento: invece di esprimere le funzioni in coordinate cartesiane e calcolare il laplaciano, utilizzate la formula del laplaciano in coordinate polari vista a lezione.
-\end{exe}
-
-\subsection*{Forme differenziali}
-
-\begin{exe}
-    Scrivi una forma differenziale esatta e una non esatta prima in $\mathbb{R}^2$, poi in $\mathbb{R}^3$ e infine in $\mathbb{R}^4$.
-\end{exe}
-
-\begin{exe}
-    Determina se le seguenti forme differenziali sono esatte e, in caso affermativo, determinane un potenziale.
-    \begin{enumerate}
-        \item $yzw dx + xzw dy + xyw dz + xyz dw$ su $\mathbb{R}^4$;
-        \item $(\cos(a)b \cos(c) + c^2) da + \sin(a) \cos(c) db + (-\sin(a)b \sin(c) + 2ac) dc$ su $\mathbb{R}^3$;
-        \item $\cos(u) du + \sin(v) dv$ su $\mathbb{R}^2$;
-        \item $v \cos(uv) du + u \cos(uv) dv$;
-        \item $c |(a,b,c)| da + a |(a,b,c)| db + b |(a,b,c)| dc$;
-        \item $x |(x,y,z)| dx + y |(x,y,z)| dy + z |(x,y,z)| dz$.
+        \item $I_1 = \iint_{[1,2]\times[-2,-1]} \left(\frac{y^2}{x}\right) dx \, dy$;
+        \item $I_2 = \iiint_{[0,1]^3} (y e^{xy} - z) dx \, dy \, dz$;
+        \item $I_3 = \int_{[-1,1]^4} (1 - xyzw) dx \, dy \, dz \, dw$.
     \end{enumerate}
 \end{exe}
 
 \begin{exe}
-    Considera la forma differenziale $|x| dx + |y| dy$ definita su $\mathbb{R}^2$.
-    \begin{enumerate}
-        \item Dimostra che la forma differenziale è esatta.
-        \item Determina qual è l'insieme più grande $D$ in cui ha senso chiedersi se la forma differenziale è chiusa.
-        \item Giustifica in base alla teoria e a quanto determinato al punto precedente che la restrizione della forma differenziale all'insieme $D$ è chiusa.
-    \end{itemize}
+    Definisci un insieme $y$-semplice che non sia un rettangolo, definisci un insieme $x$-semplice che non sia un rettangolo, poi definisci un insieme che non sia né $y$-semplice né $x$-semplice.
 \end{exe}
 
 \begin{exe}
-    Se $U$ è un potenziale del campo $F : \mathbb{R}^3 \to \mathbb{R}^3$ e se $V$ è un potenziale del campo $G : \mathbb{R}^3 \to \mathbb{R}^3$, determina
+    Descrivi l'insieme $E$ in figura come insieme $x$-semplice (cioè determina $a,b,g_1$ e $g_2$ in modo che valga l'uguaglianza $E = \{(x,y) \in \mathbb{R}^2 : y \in [a,b], g_1(y) \leq x \leq g_2(y)\}$). $E$ è anche $y$-semplice? In caso di risposta affermativa, scrivilo sotto forma di insieme $y$-semplice.
+\end{exe}
+
+\begin{exe}
+    Dimostra che gli insiemi della forma $\{(x,y) \in \mathbb{R}^2 : x^n + y^n = 1\}$ sono sia $y$-semplici sia $x$-semplici per ogni $n \in \mathbb{N}$.
+\end{exe}
+
+\begin{exe}
+    Calcola i seguenti integrali doppi.
     \begin{enumerate}
-        \item se $U+V$ è il potenziale di $F+G$;
-        \item determina quale campo ha come potenziale $U \cdot V$.
+        \item $\iint_A 1 \, dx dy$, dove $A$ è l'insieme rappresentato in figura;
+        \item $\iint_B y \, dx dy$, dove $B = \{(x,y) : y \in [-1,1], y-1 \leq x \leq y^2\}$;
+        \item $\iint_C xy \, dx dy$, dove $C$ è l'insieme rappresentato in figura.
     \end{enumerate}
 \end{exe}
 
 \begin{exe}
-    Determina per quale valore di $k \in \mathbb{R}$ il campo $F(x,y,z) = (3x^2 y^2 z, 2x^3 y z^k, x^3 y^2)$ è conservativo, poi calcola il potenziale corrispondente.
+    Consideriamo gli insiemi $A = \{(x,y) \in \mathbb{R}^2 : 0 \leq x \leq y^2 \leq 1\}$ e $B = \{(x,y) \in \mathbb{R}^2 : x \in [3,4]; x \leq y < x^2-2\}$. Sapendo che la funzione $f : \mathbb{R}^2 \to \mathbb{R}$ verifica $\iint_A f(x,y) \, dx dy = 1$ e $\iint_B f(x,y) \, dx dy = -1$, calcola $\iint_{A \cup B} 5f(x,y) \, dx dy$.
+\end{exe}
+
+\begin{exe}
+    Calcola
+    \begin{enumerate}
+        \item il volume del solido avente per base l'insieme $\{(x,y,1) : 1 \leq x^2 + y^2 \leq 4\}$ e la cui altezza $z$ soddisfa la disequazione $z \leq \left| \frac{xy}{x^2+y^2} \right| + 1$;
+        \item il volume del solido $S = \{(x,y,z) : 0 \leq z \leq 1; x^2 + \frac{y^2}{2} = z^2 \}$.
+    \end{enumerate}
 \end{exe}
 
 \begin{center}
