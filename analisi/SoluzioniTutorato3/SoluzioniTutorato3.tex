@@ -6,8 +6,8 @@
 \usepackage{amssymb}
 \usepackage[italian]{babel}
 
-\title{Soluzioni Tutorato 4\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
-\author{prof. Emanuele Bottazzi}
+\title{Soluzioni Tutorato 3 - Analisi\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2025/2026}
+\author{Massimiliano Ghiotto - massimiliano.ghiotto01@universitadipavia.it}
 \date{}
 
 \usepackage{amsthm}
@@ -19,46 +19,178 @@
 \maketitle
 
 \begin{exe}
-    Verificate che la funzione $f(x,y) = \alpha x + \beta y + \gamma$ è armonica.
-\end{exe}
-\begin{sol}
-    $f_{xx} = 0, f_{yy} = 0 \implies \Delta f = 0$.
-\end{sol}
-
-\begin{exe}
-    Verificate funzioni armoniche...
-\end{exe}
-\begin{sol}
-    $\Delta(e^{kx}\cos(ky)) = k^2 e^{kx}\cos(ky) - k^2 e^{kx}\cos(ky) = 0$.
-\end{sol}
-
-\begin{exe}
     Laplaciano in coordinate polari...
 \end{exe}
 \begin{sol}
-    (1) $\frac{\theta^2 + 2}{\rho}$; (2) $2 + 2\theta/\rho$.
+    Ricordiamo la formula del laplaciano in coordinate polari: $\Delta g = \frac{\partial^2 g}{\partial \rho^2} + \frac{1}{\rho}\frac{\partial g}{\partial \rho} + \frac{1}{\rho^2}\frac{\partial^2 g}{\partial \theta^2}$.
+    \begin{enumerate}
+        \item $g(\rho, \theta) = \rho \theta^2$: $\Delta g = 0 + \frac{1}{\rho}\theta^2 + \frac{1}{\rho^2}(2\rho) = \frac{\theta^2 + 2}{\rho}$.
+        \item $g(\rho, \theta) = \rho^2 \theta$: $\Delta g = 2\theta + \frac{1}{\rho}(2\rho\theta) + 0 = 4\theta$.
+        \item $g(\rho, \theta) = \rho \sin(\theta)$: $\Delta g = 0 + \frac{1}{\rho}\sin\theta - \frac{1}{\rho^2}(\rho\sin\theta) = 0$.
+        \item $g(\rho, \theta) = \sin(\rho \theta)$: $\Delta g = -\theta^2 \sin(\rho\theta) + \frac{\theta}{\rho}\cos(\rho\theta) - \sin(\rho\theta)$.
+        \item $g(\rho, \theta) = e^\rho \cos(\rho)$: $\Delta g = e^\rho \left( -2\sin\rho + \frac{\cos\rho - \sin\rho}{\rho} \right)$.
+        \item $g(\rho, \theta) = f(\rho)$: $\Delta g = f''(\rho) + \frac{1}{\rho}f'(\rho)$.
+    \end{enumerate}
 \end{sol}
 
 \begin{exe}
-    Determina se le forme differenziali sono esatte...
+    Determina in quali punti di $\mathbb{R}^3$ la seguente funzione è derivabile... ($f(x,y,z) = zx^2 - xy^3 + z^4$)
 \end{exe}
 \begin{sol}
-    (1) è esatta, potenziale $U = xyzw$;
-    (2) è esatta, potenziale $U = \sin(a)b \cos(c) + ac^2$;
-    (3) è esatta, potenziale $U = \sin(u) - \cos(v)$;
-    (4) è esatta, potenziale $U = \sin(uv)$.
+    Essendo $f(x,y,z) = zx^2 - xy^3 + z^4$ un polinomio nelle variabili $x, y, z$, le sue derivate parziali esistono e sono continue in tutto $\mathbb{R}^3$. Quindi $f \in C^\infty(\mathbb{R}^3) \implies f \in C^1(\mathbb{R}^3)$ e per il teorema del differenziale totale, $f$ è differenziabile in tutto $\mathbb{R}^3$. Le derivate parziali sono:
+    \[
+        \frac{\partial f}{\partial x} = 2xz - y^3, \quad \frac{\partial f}{\partial y} = -3xy^2, \quad \frac{\partial f}{\partial z} = x^2 + 4z^3
+    \]
+    Il più grande insieme aperto in cui $f \in C^1$ è $\mathbb{R}^3$.
+\end{sol}
+
+\begin{exe}
+    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile... ($f(x,y) = |x|y$)
+\end{exe}
+\begin{sol}
+    Per $x \neq 0$, in un intorno del punto la funzione coincide con $xy$ (se $x>0$) o con $-xy$ (se $x<0$). Poiché sono polinomi, $f$ è derivabile e differenziabile, e le derivate sono continue:
+    \[
+        \frac{\partial f}{\partial x}(x,y) = \text{sgn}(x)y, \quad \frac{\partial f}{\partial y}(x,y) = |x|
+    \]
+    Nei punti $(0, y_0)$, calcoliamo le derivate parziali con la definizione:
+    \[
+        \frac{\partial f}{\partial x}(0, y_0) = \lim_{t \to 0} \frac{|t|y_0}{t}
+    \]
+    Se $y_0 \neq 0$, il limite destro è $y_0$ e il limite sinistro è $-y_0$, quindi la derivata parziale rispetto a $x$ non esiste. Se $y_0 = 0$, il limite è 0.
+    \[
+        \frac{\partial f}{\partial y}(0, y_0) = \lim_{t \to 0} \frac{0}{t} = 0
+    \]
+    Pertanto, nei punti $(0, y_0)$ con $y_0 \neq 0$, la funzione non è derivabile (e quindi nemmeno differenziabile).
+    Nel punto $(0,0)$, la funzione è derivabile con $\nabla f(0,0) = (0,0)$. Verifichiamo la differenziabilità in $(0,0)$:
+    \[
+        \lim_{(x,y) \to (0,0)} \frac{|x|y}{\sqrt{x^2+y^2}} = 0 \quad \text{poiché} \quad \left| \frac{|x|y}{\sqrt{x^2+y^2}} \right| \le \frac{\sqrt{x^2+y^2}\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}} = \sqrt{x^2+y^2} \to 0
+    \]
+    Quindi $f$ è differenziabile in $(0,0)$.
+    In conclusione, $f$ è derivabile e differenziabile in $\{ (x,y) \in \mathbb{R}^2 : x \neq 0 \} \cup \{(0,0)\}$.
+    Il più grande insieme aperto in cui $f \in C^1$ è $\mathbb{R}^2 \setminus \{(0, y) \in \mathbb{R}^2\}$.
+\end{sol}
+
+\begin{exe}
+    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile... ($f(x,y) = \frac{x^3+2y^4}{x^2+y^2}$)
+\end{exe}
+\begin{sol}
+    Per $(x,y) \neq (0,0)$ la funzione è composta da funzioni derivabili e il denominatore non si annulla, quindi è derivabile e differenziabile.
+    Calcoliamo le derivate parziali nell'origine tramite la definizione:
+    \[
+        \frac{\partial f}{\partial x}(0,0) = \lim_{t \to 0} \frac{f(t,0) - f(0,0)}{t} = \lim_{t \to 0} \frac{t^3/t^2}{t} = 1
+    \]
+    \[
+        \frac{\partial f}{\partial y}(0,0) = \lim_{t \to 0} \frac{f(0,t) - f(0,0)}{t} = \lim_{t \to 0} \frac{2t^4/t^2}{t} = \lim_{t \to 0} 2t = 0
+    \]
+    La funzione è quindi derivabile in tutto $\mathbb{R}^2$. Studiamo la differenziabilità in $(0,0)$:
+    \[
+        \lim_{(x,y) \to (0,0)} \frac{f(x,y) - f(0,0) - \frac{\partial f}{\partial x}(0,0)x - \frac{\partial f}{\partial y}(0,0)y}{\sqrt{x^2+y^2}} = \lim_{(x,y) \to (0,0)} \frac{\frac{x^3+2y^4}{x^2+y^2} - x}{\sqrt{x^2+y^2}} = \lim_{(x,y) \to (0,0)} \frac{2y^4 - xy^2}{(x^2+y^2)^{3/2}}
+    \]
+    Passando in coordinate polari $x = \rho \cos \theta, y = \rho \sin \theta$:
+    \[
+        \lim_{\rho \to 0} \frac{2\rho^4 \sin^4 \theta - \rho^3 \cos \theta \sin^2 \theta}{\rho^3} = \lim_{\rho \to 0} (2\rho \sin^4 \theta - \cos \theta \sin^2 \theta) = - \cos \theta \sin^2 \theta
+    \]
+    Il limite dipende da $\theta$, quindi non esiste e la funzione non è differenziabile in $(0,0)$.
+\end{sol}
+
+\begin{exe}
+    Data la funzione $f(x,y)$ calcola le derivate parziali in $(0,0)$ e stabilisci se è differenziabile... ($f(x,y) = \frac{2x^3+x^2y^2+2xy^2+4y^5}{x^2+y^2}$)
+\end{exe}
+\begin{sol}
+    Calcoliamo le derivate parziali nell'origine:
+    \[
+        \frac{\partial f}{\partial x}(0,0) = \lim_{t \to 0} \frac{f(t,0) - f(0,0)}{t} = \lim_{t \to 0} \frac{2t^3/t^2}{t} = 2
+    \]
+    \[
+        \frac{\partial f}{\partial y}(0,0) = \lim_{t \to 0} \frac{f(0,t) - f(0,0)}{t} = \lim_{t \to 0} \frac{4t^5/t^2}{t} = 0
+    \]
+    Studiamo la differenziabilità in $(0,0)$:
+    \[
+        \lim_{(x,y) \to (0,0)} \frac{f(x,y) - f(0,0) - 2x - 0y}{\sqrt{x^2+y^2}} = \lim_{(x,y) \to (0,0)} \frac{\frac{2x^3+x^2y^2+2xy^2+4y^5}{x^2+y^2} - 2x}{\sqrt{x^2+y^2}} = \lim_{(x,y) \to (0,0)} \frac{x^2y^2+4y^5}{(x^2+y^2)^{3/2}}
+    \]
+    Passando in coordinate polari:
+    \[
+        \lim_{\rho \to 0} \frac{\rho^4 \cos^2 \theta \sin^2 \theta + 4\rho^5 \sin^5 \theta}{\rho^3} = \lim_{\rho \to 0} (\rho \cos^2 \theta \sin^2 \theta + 4\rho^2 \sin^5 \theta) = 0
+    \]
+    Poiché il limite è $0$ ed è indipendente da $\theta$ ($\rho \cos^2\theta \sin^2\theta + 4\rho^2 \sin^5\theta \to 0$ uniformemente), la funzione è differenziabile nell'origine.
+    Infine, essendo $f$ differenziabile in $(0,0)$, per la formula del gradiente si ha:
+    \[
+        D_v f(0,0) = \nabla f(0,0) \cdot v = (2, 0) \cdot \left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right) = \sqrt{3}
+    \]
+\end{sol}
+
+\begin{exe}
+    Scrivi una forma differenziale esatta e una non esatta in $\mathbb{R}^2$, $\mathbb{R}^3$ e $\mathbb{R}^4$.
+\end{exe}
+\begin{sol}
+    In $\mathbb{R}^2$:
+    \begin{itemize}
+        \item Esatta: $x dx + y dy$ (potenziale $U(x,y) = \frac{x^2+y^2}{2}$).
+        \item Non esatta: $-y dx + x dy$ (infatti $\frac{\partial F_2}{\partial x} = 1 \neq \frac{\partial F_1}{\partial y} = -1$).
+    \end{itemize}
+    In $\mathbb{R}^3$:
+    \begin{itemize}
+        \item Esatta: $x dx + y dy + z dz$ (potenziale $U(x,y,z) = \frac{x^2+y^2+z^2}{2}$).
+        \item Non esatta: $y dx$ (infatti $\frac{\partial F_2}{\partial x} = 0 \neq \frac{\partial F_1}{\partial y} = 1$).
+    \end{itemize}
+    In $\mathbb{R}^4$:
+    \begin{itemize}
+        \item Esatta: $x dx + y dy + z dz + w dw$ (potenziale $U(x,y,z,w) = \frac{x^2+y^2+z^2+w^2}{2}$).
+        \item Non esatta: $y dx$.
+    \end{itemize}
+\end{sol}
+
+\begin{exe}
+    Determina se le forme differenziali sono esatte e determinane un potenziale...
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item È esatta, potenziale $U = xyzw$.
+        \item È esatta, potenziale $U = \sin(a)b \cos(c) + ac^2$.
+        \item È esatta, potenziale $U = \sin(u) - \cos(v)$.
+        \item È esatta, potenziale $U = \sin(uv)$.
+        \item Non è esatta. Infatti le derivate miste non coincidono: $\frac{\partial}{\partial a}\left( a\sqrt{a^2+b^2+c^2} \right) \neq \frac{\partial}{\partial b}\left( c\sqrt{a^2+b^2+c^2} \right)$.
+        \item È esatta, poiché è la forma differenziale associata a un campo radiale continuo: $x\rho dx + y\rho dy + z\rho dz$. Il potenziale si trova integrando $\rho d\rho$: $U(x,y,z) = \frac{1}{3}\rho^3 = \frac{1}{3}(x^2+y^2+z^2)^{\frac{3}{2}}$.
+    \end{enumerate}
+\end{sol}
+
+\begin{exe}
+    Considera la forma differenziale $|x| dx + |y| dy$ su $\mathbb{R}^2$.
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item Possiamo determinare direttamente un potenziale. La funzione $U(x,y) = \frac{1}{2}x|x| + \frac{1}{2}y|y|$ ha derivate parziali continue $\frac{\partial U}{\partial x} = |x|$ e $\frac{\partial U}{\partial y} = |y|$, per ogni $(x,y) \in \mathbb{R}^2$. Avendo un potenziale globale di classe $C^1$, la forma è esatta.
+        \item Perché abbia senso chiedersi se è chiusa, i coefficienti della forma devono essere derivabili. La funzione valore assoluto non è derivabile nell'origine. L'insieme più grande su cui i coefficienti sono differenziabili è $D = \mathbb{R}^2 \setminus \{(x,y) \in \mathbb{R}^2 : x=0 \text{ oppure } y=0\}$, cioè l'unione dei quattro quadranti aperti.
+        \item Sugli aperti determinati in precedenza, la forma differenziale è di classe $C^1$, ed essendo esatta su tutto $\mathbb{R}^2$, la sua restrizione a $D$ è anch'essa esatta. Poiché ogni forma esatta di classe $C^1$ è chiusa, la restrizione della forma all'insieme $D$ è chiusa (e infatti banalmente $\frac{\partial |y|}{\partial x} = 0 = \frac{\partial |x|}{\partial y}$).
+    \end{enumerate}
+\end{sol}
+
+\begin{exe}
+    Se $U$ è un potenziale del campo $F$ e $V$ è un potenziale del campo $G$...
+\end{exe}
+\begin{sol}
+    \begin{enumerate}
+        \item Sì, $U+V$ è un potenziale di $F+G$. Infatti per la linearità del gradiente si ha $\nabla(U+V) = \nabla U + \nabla V = F + G$.
+        \item Applichiamo la regola di Leibniz per il gradiente del prodotto di due funzioni:
+              \[
+                  \nabla(U \cdot V) = (\nabla U)V + U(\nabla V) = F \cdot V + U \cdot G
+              \]
+              Il campo che ha come potenziale $U \cdot V$ è $F V + U G$.
+    \end{enumerate}
 \end{sol}
 
 \begin{exe}
     Campo conservativo $F(x,y,z) = (3x^2 y^2 z, 2x^3 y z^k, x^3 y^2)$.
 \end{exe}
 \begin{sol}
-    $k=1$. Potenziale $U = x^3 y^2 z$.
+    Affinché il campo sia conservativo su $\mathbb{R}^3$, le derivate in croce devono essere uguali. Uguagliando $\frac{\partial F_2}{\partial z}$ e $\frac{\partial F_3}{\partial y}$ si trova:
+    \[
+        \frac{\partial}{\partial z}(2x^3 y z^k) = 2kx^3 y z^{k-1}
+    \]
+    \[
+        \frac{\partial}{\partial y}(x^3 y^2) = 2x^3 y
+    \]
+    Uguagliando si ottiene $k=1$. In tal caso il campo è $C^\infty(\mathbb{R}^3)$ e definito su dominio convesso, quindi chiuso implica esatto. Il potenziale è $U(x,y,z) = x^3 y^2 z$.
 \end{sol}
-
-\begin{center}
-    prof. Emanuele Bottazzi\\
-    emanuele.bottazzi@unipv.it
-\end{center}
 
 \end{document}

@@ -17,26 +17,23 @@
 \begin{document}
 \maketitle
 
-\section*{Semplici equazioni alle derivate parziali e forme differenziali}
 
-\subsection*{Semplici equazioni alle derivate parziali}
+% \begin{exe}
+%     Verificate che la funzione $f(x,y) = \alpha x + \beta y + \gamma$ è armonica per ogni $\alpha, \beta, \gamma \in \mathbb{R}$.
+% \end{exe}
 
-\begin{exe}
-    Verificate che la funzione $f(x,y) = \alpha x + \beta y + \gamma$ è armonica per ogni $\alpha, \beta, \gamma \in \mathbb{R}$.
-\end{exe}
+% \begin{exe}
+%     Verificate che
+%     \begin{itemize}
+%         \item $e^{kx} \cos(ky)$ è armonica per ogni $k \in \mathbb{R}$;
+%         \item $e^{kx} \cos(ky) + e^{hx} \sin(hy)$ è armonica per ogni $h, k \in \mathbb{R}$;
+%         \item $\ln(\sqrt{x^2+y^2})$ è armonica su $\mathbb{R}^2 \setminus \{(0,0)\}$.
+%     \end{itemize}
+% \end{exe}
 
-\begin{exe}
-    Verificate che
-    \begin{itemize}
-        \item $e^{kx} \cos(ky)$ è armonica per ogni $k \in \mathbb{R}$;
-        \item $e^{kx} \cos(ky) + e^{hx} \sin(hy)$ è armonica per ogni $h, k \in \mathbb{R}$;
-        \item $\ln(\sqrt{x^2+y^2})$ è armonica su $\mathbb{R}^2 \setminus \{(0,0)\}$.
-    \end{itemize}
-\end{exe}
-
-\begin{exe}
-    Dimostrate il teorema enunciato nella teoria: se $f,g : A \subseteq \mathbb{R}^n \to \mathbb{R}$ sono armoniche, allora per ogni $\alpha, \beta \in \mathbb{R}$, $\alpha f + \beta g$ è armonica.
-\end{exe}
+% \begin{exe}
+%     Dimostrate il teorema enunciato nella teoria: se $f,g : A \subseteq \mathbb{R}^n \to \mathbb{R}$ sono armoniche, allora per ogni $\alpha, \beta \in \mathbb{R}$, $\alpha f + \beta g$ è armonica.
+% \end{exe}
 
 \begin{exe}
     Calcolate il laplaciano delle seguenti funzioni scritte in coordinate polari:
@@ -48,10 +45,42 @@
         \item $g(\rho, \theta) = e^\rho \cos(\rho)$;
         \item $g(\rho, \theta) = f(\rho)$.
     \end{enumerate}
-    Suggerimento: invece di esprimere le funzioni in coordinate cartesiane e calcolare il laplaciano, utilizzate la formula del laplaciano in coordinate polari vista a lezione.
 \end{exe}
 
-\subsection*{Forme differenziali}
+\begin{exe}
+    Determina in quali punti di $\mathbb{R}^3$ la seguente funzione è derivabile, calcolando esplicitamente le derivate in tale caso, e differenziabile. Determina il più grande insieme aperto in cui $f \in C^1$:
+    \[
+        f(x,y,z) = zx^2 - xy^3 + z^4
+    \]
+\end{exe}
+
+\begin{exe}
+    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile, calcolando esplicitamente le derivate parziali in tale caso, e differenziabile. Determina il più grande insieme aperto in cui $f \in C^1$:
+    \[
+        f(x,y) = |x|y
+    \]
+\end{exe}
+
+\begin{exe}
+    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile, calcolando esplicitamente le derivate parziali nell'origine, e differenziabile:
+    \[
+        f(x,y) = \begin{cases}
+            \frac{x^3+2y^4}{x^2+y^2} & \text{per } (x,y) \neq (0,0) \\
+            0                        & \text{per } (x,y) = (0,0)
+        \end{cases}
+    \]
+\end{exe}
+
+\begin{exe}
+    Data la funzione
+    \[
+        f(x,y) = \begin{cases}
+            \frac{2x^3+x^2y^2+2xy^2+4y^5}{x^2+y^2} & \text{per } (x,y) \neq (0,0) \\
+            0                                      & \text{per } (x,y) = (0,0)
+        \end{cases}
+    \]
+    calcola le derivate parziali di $f$ in $(0,0)$ e stabilisci se $f$ è differenziabile nell'origine. Calcola inoltre $D_v f(0,0)$ per $v = \left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$.
+\end{exe}
 
 \begin{exe}
     Scrivi una forma differenziale esatta e una non esatta prima in $\mathbb{R}^2$, poi in $\mathbb{R}^3$ e infine in $\mathbb{R}^4$.
@@ -90,9 +119,6 @@
     Determina per quale valore di $k \in \mathbb{R}$ il campo $F(x,y,z) = (3x^2 y^2 z, 2x^3 y z^k, x^3 y^2)$ è conservativo, poi calcola il potenziale corrispondente.
 \end{exe}
 
-\begin{center}
-    prof. Emanuele Bottazzi\\
-    emanuele.bottazzi@unipv.it
-\end{center}
+
 
 \end{document}
