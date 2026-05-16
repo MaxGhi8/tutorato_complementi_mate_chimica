@@ -13,14 +13,11 @@
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{exe}{Esercizio}
-\newtheorem*{sol}{Soluzione}
+\newtheorem{sol}{Soluzione}
 
 \begin{document}
 \maketitle
 
-\begin{exe}
-    Laplaciano in coordinate polari...
-\end{exe}
 \begin{sol}
     Ricordiamo la formula del laplaciano in coordinate polari: $\Delta g = \frac{\partial^2 g}{\partial \rho^2} + \frac{1}{\rho}\frac{\partial g}{\partial \rho} + \frac{1}{\rho^2}\frac{\partial^2 g}{\partial \theta^2}$.
     \begin{enumerate}
@@ -33,9 +30,6 @@
     \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Determina in quali punti di $\mathbb{R}^3$ la seguente funzione è derivabile... ($f(x,y,z) = zx^2 - xy^3 + z^4$)
-\end{exe}
 \begin{sol}
     Essendo $f(x,y,z) = zx^2 - xy^3 + z^4$ un polinomio nelle variabili $x, y, z$, le sue derivate parziali esistono e sono continue in tutto $\mathbb{R}^3$. Quindi $f \in C^\infty(\mathbb{R}^3) \implies f \in C^1(\mathbb{R}^3)$ e per il teorema del differenziale totale, $f$ è differenziabile in tutto $\mathbb{R}^3$. Le derivate parziali sono:
     \[
@@ -44,9 +38,6 @@
     Il più grande insieme aperto in cui $f \in C^1$ è $\mathbb{R}^3$.
 \end{sol}
 
-\begin{exe}
-    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile... ($f(x,y) = |x|y$)
-\end{exe}
 \begin{sol}
     Per $x \neq 0$, in un intorno del punto la funzione coincide con $xy$ (se $x>0$) o con $-xy$ (se $x<0$). Poiché sono polinomi, $f$ è derivabile e differenziabile, e le derivate sono continue:
     \[
@@ -70,9 +61,6 @@
     Il più grande insieme aperto in cui $f \in C^1$ è $\mathbb{R}^2 \setminus \{(0, y) \in \mathbb{R}^2\}$.
 \end{sol}
 
-\begin{exe}
-    Determina in quali punti di $\mathbb{R}^2$ la seguente funzione è derivabile... ($f(x,y) = \frac{x^3+2y^4}{x^2+y^2}$)
-\end{exe}
 \begin{sol}
     Per $(x,y) \neq (0,0)$ la funzione è composta da funzioni derivabili e il denominatore non si annulla, quindi è derivabile e differenziabile.
     Calcoliamo le derivate parziali nell'origine tramite la definizione:
@@ -93,9 +81,6 @@
     Il limite dipende da $\theta$, quindi non esiste e la funzione non è differenziabile in $(0,0)$.
 \end{sol}
 
-\begin{exe}
-    Data la funzione $f(x,y)$ calcola le derivate parziali in $(0,0)$ e stabilisci se è differenziabile... ($f(x,y) = \frac{2x^3+x^2y^2+2xy^2+4y^5}{x^2+y^2}$)
-\end{exe}
 \begin{sol}
     Calcoliamo le derivate parziali nell'origine:
     \[
@@ -119,9 +104,6 @@
     \]
 \end{sol}
 
-\begin{exe}
-    Scrivi una forma differenziale esatta e una non esatta in $\mathbb{R}^2$, $\mathbb{R}^3$ e $\mathbb{R}^4$.
-\end{exe}
 \begin{sol}
     In $\mathbb{R}^2$:
     \begin{itemize}
@@ -140,9 +122,6 @@
     \end{itemize}
 \end{sol}
 
-\begin{exe}
-    Determina se le forme differenziali sono esatte e determinane un potenziale...
-\end{exe}
 \begin{sol}
     \begin{enumerate}
         \item È esatta, potenziale $U = xyzw$.
@@ -154,9 +133,6 @@
     \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Considera la forma differenziale $|x| dx + |y| dy$ su $\mathbb{R}^2$.
-\end{exe}
 \begin{sol}
     \begin{enumerate}
         \item Possiamo determinare direttamente un potenziale. La funzione $U(x,y) = \frac{1}{2}x|x| + \frac{1}{2}y|y|$ ha derivate parziali continue $\frac{\partial U}{\partial x} = |x|$ e $\frac{\partial U}{\partial y} = |y|$, per ogni $(x,y) \in \mathbb{R}^2$. Avendo un potenziale globale di classe $C^1$, la forma è esatta.
@@ -165,9 +141,6 @@
     \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Se $U$ è un potenziale del campo $F$ e $V$ è un potenziale del campo $G$...
-\end{exe}
 \begin{sol}
     \begin{enumerate}
         \item Sì, $U+V$ è un potenziale di $F+G$. Infatti per la linearità del gradiente si ha $\nabla(U+V) = \nabla U + \nabla V = F + G$.
@@ -179,9 +152,6 @@
     \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Campo conservativo $F(x,y,z) = (3x^2 y^2 z, 2x^3 y z^k, x^3 y^2)$.
-\end{exe}
 \begin{sol}
     Affinché il campo sia conservativo su $\mathbb{R}^3$, le derivate in croce devono essere uguali. Uguagliando $\frac{\partial F_2}{\partial z}$ e $\frac{\partial F_3}{\partial y}$ si trova:
     \[
