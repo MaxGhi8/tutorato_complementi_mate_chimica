@@ -6,53 +6,75 @@
 \usepackage{amssymb}
 \usepackage[italian]{babel}
 
-\title{Soluzione Tutorato 5\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2021/2022}
-\author{prof. Emanuele Bottazzi}
+\title{Soluzioni Tutorato 4 - Analisi\\Complementi di Matematica per le Scienze Chimiche\\ A.A. 2025/2026}
+\author{Massimiliano Ghiotto - massimiliano.ghiotto01@universitadipavia.it}
 \date{}
 
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{exe}{Esercizio}
-\newtheorem*{sol}{Soluzione}
+\newtheorem{sol}{Soluzione}
 
 \begin{document}
 \maketitle
 
-\begin{exe}
-    Calcola integrali multipli.
-\end{exe}
 \begin{sol}
     \begin{enumerate}
-        \item $I_1 = \int_1^2 \frac{1}{x} dx \int_{-2}^{-1} y^2 dy = [\ln x]_1^2 [\frac{y^3}{3}]_{-2}^{-1} = \ln(2) \frac{7}{3}$.
-        \item $I_2 = e - 3/2$.
-        \item $I_3 = 2^4 = 16$.
+        \item $I_1 = \iint_{[1,2]\times[-2,-1]} \left(\frac{y^2}{x}\right) dx \, dy = \int_1^2 \frac{1}{x} dx \int_{-2}^{-1} y^2 dy = [\ln x]_1^2 [\frac{y^3}{3}]_{-2}^{-1} = \ln(2) \frac{7}{3}$.
+        \item $I_2 = \iiint_{[0,1]^3} (y e^{xy} - z) dx \, dy \, dz = \int_0^1 \left( \int_0^1 (e^{xy} - zx)|_0^1 dy \right) dz = \int_0^1 \int_0^1 (e^y - z - 1) dy dz = \int_0^1 (e - 1 - z - 1) dz = e - 2 - 1/2 = e - 5/2$.
+        \item $I_3 = \int_{[-1,1]^4} (1 - xyzw) dx \, dy \, dz \, dw = 2^4 - 0 = 16$.
     \end{enumerate}
 \end{sol}
 
-\begin{exe}
-    Definisci insieme $y$-semplice...
-\end{exe}
 \begin{sol}
-    $E = \{(x,y) \in \mathbb{R}^2 : y \in [0,1], y \leq x \leq -y+2 \}$.
+    \begin{itemize}
+        \item $y$-semplice: $E = \{(x,y) \in \mathbb{R}^2 : a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}$. Esempio: il semidisco unitario superiore $x \in [-1,1], 0 \leq y \leq \sqrt{1-x^2}$.
+        \item $x$-semplice: $E = \{(x,y) \in \mathbb{R}^2 : c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}$. Esempio: il semidisco unitario destro $y \in [-1,1], 0 \leq x \leq \sqrt{1-y^2}$.
+        \item Né $y$-semplice né $x$-semplice: Una corona circolare $1 \leq x^2+y^2 \leq 4$.
+    \end{itemize}
 \end{sol}
 
-\begin{exe}
-    Calcola integrali doppi.
-\end{exe}
 \begin{sol}
-    (1) $1/12$; (2) $-2/3$.
+    Poiché $A \subset [0,1] \times [-1,1]$ e $B \subset [3,4] \times \mathbb{R}$, gli insiemi sono disgiunti.
+    \[ \iint_{A \cup B} 5f = 5 \left( \iint_A f + \iint_B f \right) = 5(1 - 1) = 0. \]
 \end{sol}
 
-\begin{exe}
-    Calcola $\iint_{A \cup B} 5f(x,y) \, dx dy$.
-\end{exe}
 \begin{sol}
-    $\iint_{A \cup B} 5f = 5 \left( \iint_A f + \iint_B f \right) = 5(1 - 1) = 0$.
+    \begin{enumerate}
+        \item $V = \iint_{1 \leq x^2+y^2 \leq 4} (\left| \frac{xy}{x^2+y^2} \right| + 1) dx dy$. In coordinate polari:
+              $V = \int_1^2 \rho d\rho \int_0^{2\pi} (\frac{1}{2} |\sin 2\theta| + 1) d\theta = \frac{3}{2} (2 + 2\pi) = 3 + 3\pi$.
+        \item $V = \int_0^1 \text{Area}(E_z) dz$, dove $E_z$ è l'ellisse $x^2 + \frac{y^2}{2} \leq z^2$. L'area è $\pi \cdot z \cdot \sqrt{2}z = \sqrt{2}\pi z^2$.
+              Quindi $V = \int_0^1 \sqrt{2}\pi z^2 dz = \frac{\sqrt{2}}{3}\pi$.
+    \end{enumerate}
 \end{sol}
 
-\begin{center}
-    prof. Emanuele Bottazzi\\
-    emanuele.bottazzi@unipv.it
-\end{center}
+\begin{sol}
+    La funzione $f(x,y) = xy^3$ è dispari in $x$ e il dominio $\Omega$ (ellisse) è simmetrico rispetto all'asse $y$. Pertanto l'integrale è 0.
+\end{sol}
+
+\begin{sol}
+    Integrando per strati: $\iint_{x^2+y^2 \leq z} x^2 dx dy = \frac{\pi z^2}{4}$.
+    \[ I = \int_0^2 (2-z) \frac{\pi z^2}{4} dz = \frac{\pi}{4} \left[\frac{2z^3}{3} - \frac{z^4}{4}\right]_0^2 = \frac{\pi}{4} (\frac{16}{3} - 4) = \frac{\pi}{3}. \]
+\end{sol}
+
+\begin{sol}
+    $I = \int_0^{2\pi} \int_{\sin x}^{\cos x + 2} 2y dy dx = \int_0^{2\pi} ((\cos x + 2)^2 - \sin^2 x) dx = \int_0^{2\pi} (\cos 2x + 4 \cos x + 4) dx = 8\pi$.
+\end{sol}
+
+\begin{sol}
+    $I = \int_{-1}^1 \int_{y-1}^{y^2} y dx dy = \int_{-1}^1 (y^3 - y^2 + y) dy = [y^4/4 - y^3/3 + y^2/2]_{-1}^1 = -2/3$.
+\end{sol}
+
+\begin{sol}
+    L'integrale è $\int_0^2 y (\ln(3-y) - \ln(y/2)) dy$. Calcolando separatamente:
+    $\int_0^2 y \ln(3-y) dy = 4.5\ln 3 - 4$ e $\int_0^2 y \ln(y/2) dy = -1$.
+    Il risultato è $4.5\ln 3 - 3$.
+\end{sol}
+
+\begin{sol}
+    In coordinate polari: $0 \leq \theta \leq \pi/3$, $0 \leq \rho \leq 1/\cos \theta$.
+    \[ I = \int_0^{\pi/3} \sin \theta \cos \theta \frac{1}{5 \cos^5 \theta} d\theta = \frac{1}{5} \int_0^{\pi/3} \frac{\sin \theta}{\cos^4 \theta} d\theta = \frac{1}{5} \left[ \frac{1}{3 \cos^3 \theta} \right]_0^{\pi/3} = \frac{1}{15} (8 - 1) = \frac{7}{15}. \]
+
+\end{sol}
 
 \end{document}
